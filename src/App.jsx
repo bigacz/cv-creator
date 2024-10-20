@@ -1,5 +1,7 @@
+import CvCreator from './components/CvCreator';
+
 function App() {
-  return <h1>Initial</h1>;
+  return <CvCreator />;
 }
 
 export default App;
