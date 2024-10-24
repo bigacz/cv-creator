@@ -1,4 +1,4 @@
-import Editor from './form/Editor';
+import Editor from './editor/Editor';
 import Preview from './preview/Preview';
 
 function CvCreator() {
