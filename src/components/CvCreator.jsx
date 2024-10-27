@@ -4,7 +4,7 @@ import Editor from './editor/Editor';
 import Preview from './preview/Preview';
 
 function CvCreator() {
-  const [credentials, setCredentials] = useState({});
+  const [credentials, setCredentials] = useState(defaultCredentials);
   const [schools, setSchools] = useState([]);
   const [jobs, setJobs] = useState([]);
 
@@ -29,3 +29,10 @@ function CvCreator() {
 }
 
 export default CvCreator;
+
+const defaultCredentials = {
+  first: '',
+  last: '',
+  email: '',
+  phone: '',
+};
