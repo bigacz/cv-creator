@@ -23,7 +23,7 @@ function CvCreator() {
   return (
     <div>
       <Editor cvData={cvData} handlers={handlers} />
-      <Preview />
+      <Preview cvData={cvData} />
     </div>
   );
 }
