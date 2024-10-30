@@ -4,8 +4,8 @@ import Editor from './editor/Editor';
 import Preview from './preview/Preview';
 
 function CvCreator() {
-  const [credentials, setCredentials] = useState(defaultCredentials);
-  const [schools, setSchools] = useState([]);
+  const [credentials, setCredentials] = useState({ ...defaultCredentials });
+  const [schools, setSchools] = useState([{ ...defaultSchool }]);
   const [jobs, setJobs] = useState([]);
 
   const cvData = { credentials, schools, jobs };
@@ -18,7 +18,22 @@ function CvCreator() {
     setCredentials(newCredentials);
   }
 
-  const handlers = { handleCredentialsChange };
+  function handleSchoolsChange(id, name, value) {
+    const editedSchoolIndex = schools.findIndex((e) => {
+      return e.id == id;
+    });
+
+    console.log(value);
+
+    const editedSchool = schools[editedSchoolIndex];
+
+    const newSchool = { ...editedSchool, [name]: value };
+    const newSchools = schools.toSpliced(editedSchoolIndex, 1, newSchool);
+
+    setSchools(newSchools);
+  }
+
+  const handlers = { handleCredentialsChange, handleSchoolsChange };
 
   return (
     <div>
@@ -35,4 +50,13 @@ const defaultCredentials = {
   last: '',
   email: '',
   phone: '',
+};
+
+const defaultSchool = {
+  id: 0,
+  schoolName: '',
+  studyTitle: '',
+  yearStarted: '',
+  yearEnded: '',
+  isEnded: '',
 };

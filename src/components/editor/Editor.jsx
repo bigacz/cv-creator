@@ -3,8 +3,8 @@ import ExperienceEditor from './ExperienceEditor';
 import GeneralEditor from './GeneralEditor';
 
 function Editor({ cvData, handlers }) {
-  const { credentials } = cvData;
-  const { handleCredentialsChange } = handlers;
+  const { credentials, schools } = cvData;
+  const { handleCredentialsChange, handleSchoolsChange } = handlers;
 
   return (
     <div>
@@ -12,7 +12,7 @@ function Editor({ cvData, handlers }) {
         credentials={credentials}
         handleChange={handleCredentialsChange}
       />
-      <EducationEditor />
+      <EducationEditor schools={schools} handleChange={handleSchoolsChange} />
       <ExperienceEditor />
     </div>
   );
