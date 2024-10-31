@@ -1,4 +1,4 @@
-function EducationEditor({ schools, handleChange }) {
+function EducationEditor({ schools, handleChange, handleAdd, handleRemove }) {
   const schoolFieldsets = schools.map((school) => {
     const { id, schoolName, studyTitle, yearStarted, yearEnded, isEnded } =
       school;
@@ -55,11 +55,26 @@ function EducationEditor({ schools, handleChange }) {
             }}
           />
         </label>
+        <button
+          type="button"
+          onClick={() => {
+            handleRemove(id);
+          }}
+        >
+          Remove
+        </button>
       </fieldset>
     );
   });
 
-  return <fieldset>{schoolFieldsets}</fieldset>;
+  return (
+    <fieldset>
+      {schoolFieldsets}
+      <button type="button" onClick={handleAdd}>
+        Add
+      </button>
+    </fieldset>
+  );
 }
 
 export default EducationEditor;

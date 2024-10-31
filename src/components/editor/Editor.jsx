@@ -4,7 +4,12 @@ import GeneralEditor from './GeneralEditor';
 
 function Editor({ cvData, handlers }) {
   const { credentials, schools } = cvData;
-  const { handleCredentialsChange, handleSchoolsChange } = handlers;
+  const {
+    handleCredentialsChange,
+    handleSchoolsChange,
+    handleAddSchool,
+    handleRemoveSchool,
+  } = handlers;
 
   return (
     <div>
@@ -12,7 +17,12 @@ function Editor({ cvData, handlers }) {
         credentials={credentials}
         handleChange={handleCredentialsChange}
       />
-      <EducationEditor schools={schools} handleChange={handleSchoolsChange} />
+      <EducationEditor
+        schools={schools}
+        handleChange={handleSchoolsChange}
+        handleAdd={handleAddSchool}
+        handleRemove={handleRemoveSchool}
+      />
       <ExperienceEditor />
     </div>
   );

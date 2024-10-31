@@ -23,8 +23,6 @@ function CvCreator() {
       return e.id == id;
     });
 
-    console.log(value);
-
     const editedSchool = schools[editedSchoolIndex];
 
     const newSchool = { ...editedSchool, [name]: value };
@@ -33,7 +31,29 @@ function CvCreator() {
     setSchools(newSchools);
   }
 
-  const handlers = { handleCredentialsChange, handleSchoolsChange };
+  function handleAddSchool() {
+    const highestId = findHighestId(schools);
+
+    const newSchool = { ...defaultSchool, id: highestId + 1 };
+
+    const newSchools = [...schools, newSchool];
+
+    setSchools(newSchools);
+  }
+
+  function handleRemoveSchool(id) {
+    const schoolIndex = schools.findIndex((element) => element.id === id);
+    const newSchools = schools.toSpliced(schoolIndex, 1);
+
+    setSchools(newSchools);
+  }
+
+  const handlers = {
+    handleCredentialsChange,
+    handleSchoolsChange,
+    handleAddSchool,
+    handleRemoveSchool,
+  };
 
   return (
     <div>
@@ -60,3 +80,13 @@ const defaultSchool = {
   yearEnded: '',
   isEnded: '',
 };
+
+function findHighestId(array) {
+  const ids = array.map((e) => e.id);
+  const highest = ids.reduce(
+    (candidate, current) => (current > candidate ? current : candidate),
+    0
+  );
+
+  return highest;
+}
