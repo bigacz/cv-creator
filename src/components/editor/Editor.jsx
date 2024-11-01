@@ -3,12 +3,15 @@ import ExperienceEditor from './ExperienceEditor';
 import GeneralEditor from './GeneralEditor';
 
 function Editor({ cvData, handlers }) {
-  const { credentials, schools } = cvData;
+  const { credentials, schools, jobs } = cvData;
   const {
     handleCredentialsChange,
     handleSchoolsChange,
     handleAddSchool,
     handleRemoveSchool,
+    handleJobsChange,
+    handleAddJob,
+    handleRemoveJob,
   } = handlers;
 
   return (
@@ -23,7 +26,12 @@ function Editor({ cvData, handlers }) {
         handleAdd={handleAddSchool}
         handleRemove={handleRemoveSchool}
       />
-      <ExperienceEditor />
+      <ExperienceEditor
+        jobs={jobs}
+        handleChange={handleJobsChange}
+        handleAdd={handleAddJob}
+        handleRemove={handleRemoveJob}
+      />
     </div>
   );
 }

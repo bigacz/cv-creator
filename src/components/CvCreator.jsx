@@ -6,7 +6,7 @@ import Preview from './preview/Preview';
 function CvCreator() {
   const [credentials, setCredentials] = useState({ ...defaultCredentials });
   const [schools, setSchools] = useState([{ ...defaultSchool }]);
-  const [jobs, setJobs] = useState([]);
+  const [jobs, setJobs] = useState([{ ...defaultJob }]);
 
   const cvData = { credentials, schools, jobs };
 
@@ -48,11 +48,44 @@ function CvCreator() {
     setSchools(newSchools);
   }
 
+  function handleJobsChange(id, name, value) {
+    const editedJobIndex = jobs.findIndex((e) => {
+      return e.id == id;
+    });
+
+    const editedJob = jobs[editedJobIndex];
+
+    const newJob = { ...editedJob, [name]: value };
+    const newJobs = jobs.toSpliced(editedJobIndex, 1, newJob);
+
+    setJobs(newJobs);
+  }
+
+  function handleAddJob() {
+    const highestId = findHighestId(jobs);
+
+    const newJob = { ...defaultJob, id: highestId + 1 };
+
+    const newJobs = [...jobs, newJob];
+
+    setJobs(newJobs);
+  }
+
+  function handleRemoveJob(id) {
+    const jobIndex = jobs.findIndex((element) => element.id === id);
+    const newJobs = jobs.toSpliced(jobIndex, 1);
+
+    setJobs(newJobs);
+  }
+
   const handlers = {
     handleCredentialsChange,
     handleSchoolsChange,
     handleAddSchool,
     handleRemoveSchool,
+    handleJobsChange,
+    handleAddJob,
+    handleRemoveJob,
   };
 
   return (
@@ -78,7 +111,17 @@ const defaultSchool = {
   studyTitle: '',
   yearStarted: '',
   yearEnded: '',
-  isEnded: '',
+  isEnded: false,
+};
+
+const defaultJob = {
+  id: 0,
+  companyName: '',
+  positionTitle: '',
+  responsibilities: '',
+  yearStarted: '',
+  yearEnded: '',
+  isEnded: false,
 };
 
 function findHighestId(array) {
