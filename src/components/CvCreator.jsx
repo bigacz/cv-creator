@@ -1,5 +1,11 @@
 import { useState } from 'react';
 
+import {
+  defaultCredentials,
+  defaultSchool,
+  defaultJob,
+} from '../data/defaultCvValues';
+
 import Editor from './editor/Editor';
 import Preview from './preview/Preview';
 
@@ -97,32 +103,6 @@ function CvCreator() {
 }
 
 export default CvCreator;
-
-const defaultCredentials = {
-  first: '',
-  last: '',
-  email: '',
-  phone: '',
-};
-
-const defaultSchool = {
-  id: 0,
-  schoolName: '',
-  studyTitle: '',
-  yearStarted: '',
-  yearEnded: '',
-  isEnded: false,
-};
-
-const defaultJob = {
-  id: 0,
-  companyName: '',
-  positionTitle: '',
-  responsibilities: '',
-  yearStarted: '',
-  yearEnded: '',
-  isEnded: false,
-};
 
 function findHighestId(array) {
   const ids = array.map((e) => e.id);
