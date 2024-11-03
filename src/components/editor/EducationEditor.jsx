@@ -1,4 +1,6 @@
 function EducationEditor({ schools, handleChange, handleAdd, handleRemove }) {
+  const isRemoveButtonAdded = schools.length > 1;
+
   const schoolFieldsets = schools.map((school) => {
     const { id, schoolName, studyTitle, yearStarted, yearEnded, isEnded } =
       school;
@@ -55,14 +57,16 @@ function EducationEditor({ schools, handleChange, handleAdd, handleRemove }) {
             }}
           />
         </label>
-        <button
-          type="button"
-          onClick={() => {
-            handleRemove(id);
-          }}
-        >
-          Remove
-        </button>
+        {isRemoveButtonAdded && (
+          <button
+            type="button"
+            onClick={() => {
+              handleRemove(id);
+            }}
+          >
+            Remove
+          </button>
+        )}
       </fieldset>
     );
   });

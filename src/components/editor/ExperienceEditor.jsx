@@ -1,4 +1,6 @@
 function ExperienceEditor({ jobs, handleChange, handleAdd, handleRemove }) {
+  const isRemoveButtonAdded = jobs.length > 1;
+
   const jobFieldsets = jobs.map((job) => {
     const {
       id,
@@ -72,14 +74,16 @@ function ExperienceEditor({ jobs, handleChange, handleAdd, handleRemove }) {
             }}
           />
         </label>
-        <button
-          type="button"
-          onClick={() => {
-            handleRemove(id);
-          }}
-        >
-          Remove
-        </button>
+        {isRemoveButtonAdded && (
+          <button
+            type="button"
+            onClick={() => {
+              handleRemove(id);
+            }}
+          >
+            Remove
+          </button>
+        )}
       </fieldset>
     );
   });
