@@ -2,7 +2,7 @@ import GeneralPreview from './GeneralPreview';
 import EducationPreview from './EducationPreview';
 import ExperiencePreview from './ExperiencePreview';
 
-function Preview({ cvData }) {
+function Preview({ cvData, handleClosePreview }) {
   const { credentials, schools, jobs } = cvData;
 
   return (
@@ -10,6 +10,9 @@ function Preview({ cvData }) {
       <GeneralPreview credentials={credentials} />
       <EducationPreview schools={schools} />
       <ExperiencePreview jobs={jobs} />
+      <button type="button" onClick={handleClosePreview}>
+        Close
+      </button>
     </div>
   );
 }

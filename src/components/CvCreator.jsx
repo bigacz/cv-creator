@@ -14,6 +14,8 @@ function CvCreator() {
   const [schools, setSchools] = useState([{ ...defaultSchool }]);
   const [jobs, setJobs] = useState([{ ...defaultJob }]);
 
+  const [isPreviewOpen, setIsPreviewOpen] = useState(false);
+
   const cvData = { credentials, schools, jobs };
 
   function handleCredentialsChange(name, event) {
@@ -84,7 +86,15 @@ function CvCreator() {
     setJobs(newJobs);
   }
 
-  const handlers = {
+  function handleOpenPreview() {
+    setIsPreviewOpen(true);
+  }
+
+  function handleClosePreview() {
+    setIsPreviewOpen(false);
+  }
+
+  const editorHandlers = {
     handleCredentialsChange,
     handleSchoolsChange,
     handleAddSchool,
@@ -92,14 +102,14 @@ function CvCreator() {
     handleJobsChange,
     handleAddJob,
     handleRemoveJob,
+    handleOpenPreview,
   };
 
-  return (
-    <div>
-      <Editor cvData={cvData} handlers={handlers} />
-      <Preview cvData={cvData} />
-    </div>
-  );
+  if (isPreviewOpen) {
+    return <Preview cvData={cvData} handleClosePreview={handleClosePreview} />;
+  } else {
+    return <Editor cvData={cvData} handlers={editorHandlers} />;
+  }
 }
 
 export default CvCreator;
