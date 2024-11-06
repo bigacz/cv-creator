@@ -94,9 +94,9 @@ function CvCreator() {
     const editedDuties = editedJob.duties;
 
     const editedDutyIndex = editedDuties.findIndex((e) => e.id == dutyId);
-    const editedDuty = editedDuty[editedDutyIndex];
+    const editedDuty = editedDuties[editedDutyIndex];
 
-    const newDuty = { ...editedDuty, text: value };
+    const newDuty = { ...editedDuty, value };
     const newDuties = editedDuties.toSpliced(editedDutyIndex, 1, newDuty);
     const newJob = { ...editedJob, duties: newDuties };
     const newJobs = jobs.toSpliced(editedJobIndex, 1, newJob);

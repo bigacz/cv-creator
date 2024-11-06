@@ -14,7 +14,7 @@ const defaultSchool = {
   isEnded: false,
 };
 
-const defaultDuty = { id: 0, text: '' };
+const defaultDuty = { id: 0, value: '' };
 
 const defaultJob = {
   id: 0,

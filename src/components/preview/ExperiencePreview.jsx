@@ -10,11 +10,15 @@ function ExperiencePreview({ jobs }) {
       isEnded,
     } = job;
 
+    const dutiesList = duties.map((duty) => {
+      return <p key={duty.id}>{duty.value}</p>;
+    });
+
     return (
       <div key={id}>
         <p>{companyName}</p>
         <p>{positionTitle}</p>
-        <p>{duties}</p>
+        {dutiesList}
         <p>{yearStarted}</p>
         <p>{yearEnded}</p>
         <p>{isEnded}</p>

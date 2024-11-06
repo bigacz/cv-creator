@@ -1,4 +1,14 @@
-function ExperienceEditor({ jobs, handleChange, handleAdd, handleRemove }) {
+import FlexInputList from './FlexInputList';
+
+function ExperienceEditor({
+  jobs,
+  handleChange,
+  handleAdd,
+  handleRemove,
+  handleDutiesChange,
+  handleDutiesAdd,
+  handleDutiesRemove,
+}) {
   const isRemoveButtonAdded = jobs.length > 1;
 
   const jobFieldsets = jobs.map((job) => {
@@ -11,6 +21,18 @@ function ExperienceEditor({ jobs, handleChange, handleAdd, handleRemove }) {
       yearEnded,
       isEnded,
     } = job;
+
+    function handleDutiesChangeBinded(dutyId, value) {
+      handleDutiesChange(id, dutyId, value);
+    }
+
+    function handleDutiesAddBinded() {
+      handleDutiesAdd(id);
+    }
+
+    function handleDutiesRemoveBinded(dutyId) {
+      handleDutiesRemove(id, dutyId);
+    }
 
     return (
       <fieldset key={id} data-index={id}>
@@ -36,12 +58,11 @@ function ExperienceEditor({ jobs, handleChange, handleAdd, handleRemove }) {
         </label>
         <label>
           Responsibilities:
-          <input
-            type="text"
-            value={duties}
-            onChange={(event) => {
-              handleChange(id, 'duties', event.target.value);
-            }}
+          <FlexInputList
+            entries={duties}
+            handleChange={handleDutiesChangeBinded}
+            handleAdd={handleDutiesAddBinded}
+            handleRemove={handleDutiesRemoveBinded}
           />
         </label>
         <label>
