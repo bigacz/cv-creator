@@ -40,7 +40,7 @@ function CvCreator() {
     setSchools(newSchools);
   }
 
-  function handleAddSchool() {
+  function handleSchoolsAdd() {
     const highestId = findHighestId(schools);
 
     const newSchool = { ...defaultSchool, id: highestId + 1 };
@@ -50,7 +50,7 @@ function CvCreator() {
     setSchools(newSchools);
   }
 
-  function handleRemoveSchool(id) {
+  function handleSchoolsRemove(id) {
     const schoolIndex = schools.findIndex((element) => element.id === id);
     const newSchools = schools.toSpliced(schoolIndex, 1);
 
@@ -70,7 +70,7 @@ function CvCreator() {
     setJobs(newJobs);
   }
 
-  function handleAddJob() {
+  function handleJobsAdd() {
     const highestId = findHighestId(jobs);
 
     const newJob = { ...defaultJob, id: highestId + 1 };
@@ -80,19 +80,11 @@ function CvCreator() {
     setJobs(newJobs);
   }
 
-  function handleRemoveJob(id) {
+  function handleJobsRemove(id) {
     const jobIndex = jobs.findIndex((element) => element.id === id);
     const newJobs = jobs.toSpliced(jobIndex, 1);
 
     setJobs(newJobs);
-  }
-
-  function handleOpenPreview() {
-    setIsPreviewOpen(true);
-  }
-
-  function handleClosePreview() {
-    setIsPreviewOpen(false);
   }
 
   function handleDutiesChange(jobId, dutyId, value) {
@@ -143,22 +135,34 @@ function CvCreator() {
     setJobs(newJobs);
   }
 
+  function handlePreviewOpen() {
+    setIsPreviewOpen(true);
+  }
+
+  function handlePreviewClose() {
+    setIsPreviewOpen(false);
+  }
+
   const editorHandlers = {
     handleCredentialsChange,
+
     handleSchoolsChange,
-    handleAddSchool,
-    handleRemoveSchool,
+    handleSchoolsAdd,
+    handleSchoolsRemove,
+
     handleJobsChange,
-    handleAddJob,
-    handleRemoveJob,
-    handleOpenPreview,
+    handleJobsAdd,
+    handleJobsRemove,
+
     handleDutiesChange,
     handleDutiesAdd,
     handleDutiesRemove,
+
+    handlePreviewOpen,
   };
 
   if (isPreviewOpen) {
-    return <Preview cvData={cvData} handleClosePreview={handleClosePreview} />;
+    return <Preview cvData={cvData} handlePreviewClose={handlePreviewClose} />;
   } else {
     return <Editor cvData={cvData} handlers={editorHandlers} />;
   }

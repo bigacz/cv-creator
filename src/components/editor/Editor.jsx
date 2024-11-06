@@ -6,16 +6,20 @@ function Editor({ cvData, handlers }) {
   const { credentials, schools, jobs } = cvData;
   const {
     handleCredentialsChange,
+
     handleSchoolsChange,
-    handleAddSchool,
-    handleRemoveSchool,
+    handleSchoolsAdd,
+    handleSchoolsRemove,
+
     handleJobsChange,
-    handleAddJob,
-    handleRemoveJob,
-    handleOpenPreview,
+    handleJobsAdd,
+    handleJobsRemove,
+
     handleDutiesChange,
     handleDutiesAdd,
     handleDutiesRemove,
+
+    handlePreviewOpen,
   } = handlers;
 
   return (
@@ -27,19 +31,19 @@ function Editor({ cvData, handlers }) {
       <EducationEditor
         schools={schools}
         handleChange={handleSchoolsChange}
-        handleAdd={handleAddSchool}
-        handleRemove={handleRemoveSchool}
+        handleAdd={handleSchoolsAdd}
+        handleRemove={handleSchoolsRemove}
       />
       <ExperienceEditor
         jobs={jobs}
         handleChange={handleJobsChange}
-        handleAdd={handleAddJob}
-        handleRemove={handleRemoveJob}
+        handleAdd={handleJobsAdd}
+        handleRemove={handleJobsRemove}
         handleDutiesChange={handleDutiesChange}
         handleDutiesAdd={handleDutiesAdd}
         handleDutiesRemove={handleDutiesRemove}
       />
-      <button type="button" onClick={handleOpenPreview}>
+      <button type="button" onClick={handlePreviewOpen}>
         Open preview
       </button>
     </div>
