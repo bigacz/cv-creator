@@ -4,7 +4,7 @@ function ExperiencePreview({ jobs }) {
       id,
       companyName,
       positionTitle,
-      responsibilities,
+      duties,
       yearStarted,
       yearEnded,
       isEnded,
@@ -14,7 +14,7 @@ function ExperiencePreview({ jobs }) {
       <div key={id}>
         <p>{companyName}</p>
         <p>{positionTitle}</p>
-        <p>{responsibilities}</p>
+        <p>{duties}</p>
         <p>{yearStarted}</p>
         <p>{yearEnded}</p>
         <p>{isEnded}</p>

@@ -6,7 +6,7 @@ function ExperienceEditor({ jobs, handleChange, handleAdd, handleRemove }) {
       id,
       companyName,
       positionTitle,
-      responsibilities,
+      duties,
       yearStarted,
       yearEnded,
       isEnded,
@@ -38,9 +38,9 @@ function ExperienceEditor({ jobs, handleChange, handleAdd, handleRemove }) {
           Responsibilities:
           <input
             type="text"
-            value={responsibilities}
+            value={duties}
             onChange={(event) => {
-              handleChange(id, 'responsibilities', event.target.value);
+              handleChange(id, 'duties', event.target.value);
             }}
           />
         </label>

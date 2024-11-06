@@ -13,6 +13,9 @@ function Editor({ cvData, handlers }) {
     handleAddJob,
     handleRemoveJob,
     handleOpenPreview,
+    handleDutiesChange,
+    handleDutiesAdd,
+    handleDutiesRemove,
   } = handlers;
 
   return (
@@ -32,6 +35,9 @@ function Editor({ cvData, handlers }) {
         handleChange={handleJobsChange}
         handleAdd={handleAddJob}
         handleRemove={handleRemoveJob}
+        handleDutiesChange={handleDutiesChange}
+        handleDutiesAdd={handleDutiesAdd}
+        handleDutiesRemove={handleDutiesRemove}
       />
       <button type="button" onClick={handleOpenPreview}>
         Open preview

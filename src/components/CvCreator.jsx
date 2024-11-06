@@ -4,6 +4,7 @@ import {
   defaultCredentials,
   defaultSchool,
   defaultJob,
+  defaultDuty,
 } from '../data/defaultCvValues';
 
 import Editor from './editor/Editor';
@@ -94,6 +95,54 @@ function CvCreator() {
     setIsPreviewOpen(false);
   }
 
+  function handleDutiesChange(jobId, dutyId, value) {
+    const editedJobIndex = jobs.findIndex((e) => e.id == jobId);
+    const editedJob = jobs[editedJobIndex];
+
+    const editedDuties = editedJob.duties;
+
+    const editedDutyIndex = editedDuties.findIndex((e) => e.id == dutyId);
+    const editedDuty = editedDuty[editedDutyIndex];
+
+    const newDuty = { ...editedDuty, text: value };
+    const newDuties = editedDuties.toSpliced(editedDutyIndex, 1, newDuty);
+    const newJob = { ...editedJob, duties: newDuties };
+    const newJobs = jobs.toSpliced(editedJobIndex, 1, newJob);
+
+    setJobs(newJobs);
+  }
+
+  function handleDutiesAdd(jobId) {
+    const editedJobIndex = jobs.findIndex((e) => e.id == jobId);
+    const editedJob = jobs[editedJobIndex];
+
+    const editedDuties = editedJob.duties;
+
+    const highestDutyId = findHighestId(editedDuties);
+
+    const newDuty = { ...defaultDuty, id: highestDutyId + 1 };
+    const newDuties = [...editedDuties, newDuty];
+    const newJob = { ...editedJob, duties: newDuties };
+    const newJobs = jobs.toSpliced(editedJobIndex, 1, newJob);
+
+    setJobs(newJobs);
+  }
+
+  function handleDutiesRemove(jobId, dutyId) {
+    const editedJobIndex = jobs.findIndex((e) => e.id == jobId);
+    const editedJob = jobs[editedJobIndex];
+
+    const editedDuties = editedJob.duties;
+
+    const editedDutyIndex = editedDuties.findIndex((e) => e.id == dutyId);
+
+    const newDuties = editedDuties.toSpliced(editedDutyIndex, 1);
+    const newJob = { ...editedJob, duties: newDuties };
+    const newJobs = jobs.toSpliced(editedJobIndex, 1, newJob);
+
+    setJobs(newJobs);
+  }
+
   const editorHandlers = {
     handleCredentialsChange,
     handleSchoolsChange,
@@ -103,6 +152,9 @@ function CvCreator() {
     handleAddJob,
     handleRemoveJob,
     handleOpenPreview,
+    handleDutiesChange,
+    handleDutiesAdd,
+    handleDutiesRemove,
   };
 
   if (isPreviewOpen) {

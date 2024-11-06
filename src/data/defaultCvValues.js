@@ -14,14 +14,16 @@ const defaultSchool = {
   isEnded: false,
 };
 
+const defaultDuty = { id: 0, text: '' };
+
 const defaultJob = {
   id: 0,
   companyName: '',
   positionTitle: '',
-  responsibilities: '',
+  duties: [{ ...defaultDuty }],
   yearStarted: '',
   yearEnded: '',
   isEnded: false,
 };
 
-export { defaultCredentials, defaultSchool, defaultJob };
+export { defaultCredentials, defaultSchool, defaultJob, defaultDuty };
