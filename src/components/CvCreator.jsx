@@ -143,6 +143,12 @@ function CvCreator() {
     setIsPreviewOpen(false);
   }
 
+  function handleEditorClean() {
+    setCredentials({ ...defaultCredentials });
+    setSchools([{ ...defaultSchool }]);
+    setJobs([{ ...defaultJob }]);
+  }
+
   const editorHandlers = {
     handleCredentialsChange,
 
@@ -159,6 +165,8 @@ function CvCreator() {
     handleDutiesRemove,
 
     handlePreviewOpen,
+
+    handleEditorClean,
   };
 
   if (isPreviewOpen) {
