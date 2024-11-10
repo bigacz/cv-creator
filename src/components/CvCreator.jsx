@@ -5,10 +5,10 @@ import {
   defaultSchool,
   defaultJob,
   defaultDuty,
-} from '../data/defaultCvValues';
+} from 'src/data/defaultCvValues';
 
-import Editor from './editor/Editor';
-import Preview from './preview/Preview';
+import Editor from 'components/editor/Editor';
+import Preview from 'components/preview/Preview';
 
 function CvCreator() {
   const [credentials, setCredentials] = useState({ ...defaultCredentials });

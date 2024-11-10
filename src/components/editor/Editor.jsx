@@ -1,8 +1,8 @@
-import EducationEditor from './EducationEditor';
-import ExperienceEditor from './ExperienceEditor';
-import GeneralEditor from './GeneralEditor';
+import EducationEditor from 'components/editor/EducationEditor.jsx';
+import ExperienceEditor from 'components/editor/ExperienceEditor.jsx';
+import GeneralEditor from 'components/editor/GeneralEditor.jsx';
 
-import ConfirmModal from '../shared/ConfirmModal';
+import ConfirmModal from 'components/shared/ConfirmModal';
 
 function Editor({ cvData, handlers }) {
   const { credentials, schools, jobs } = cvData;

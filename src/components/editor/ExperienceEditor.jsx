@@ -1,4 +1,4 @@
-import FlexInputList from './FlexInputList';
+import FlexInputList from 'components/editor/FlexInputList';
 
 function ExperienceEditor({
   jobs,

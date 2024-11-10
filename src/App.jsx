@@ -1,4 +1,4 @@
-import CvCreator from './components/CvCreator';
+import CvCreator from 'components/CvCreator';
 
 function App() {
   return <CvCreator />;

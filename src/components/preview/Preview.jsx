@@ -1,6 +1,6 @@
-import GeneralPreview from './GeneralPreview';
-import EducationPreview from './EducationPreview';
-import ExperiencePreview from './ExperiencePreview';
+import GeneralPreview from 'components/preview/GeneralPreview';
+import EducationPreview from 'components/preview/EducationPreview';
+import ExperiencePreview from 'components/preview/ExperiencePreview';
 
 function Preview({ cvData, handlePreviewClose }) {
   const { credentials, schools, jobs } = cvData;
