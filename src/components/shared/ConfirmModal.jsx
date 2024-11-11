@@ -1,33 +1,38 @@
 import { useState } from 'react';
 
 function ConfirmModal({
-  confirmHandler,
+  handleConfirm,
   buttonText = 'Do something',
   questionText = 'Are you sure?',
 }) {
   const [isOpen, setIsOpen] = useState(false);
 
-  function handleClose() {
+  function close() {
     setIsOpen(false);
   }
 
-  function handleOpen() {
+  function open() {
     setIsOpen(true);
+  }
+
+  function handleConfirmClick() {
+    handleConfirm();
+    close();
   }
 
   const modal = (
     <div>
       <p>{questionText}</p>
-      <button type="button" onClick={handleClose}>
+      <button type="button" onClick={close}>
         Cancel
       </button>
-      <button type="button" onClick={confirmHandler}>
+      <button type="button" onClick={handleConfirmClick}>
         {buttonText}
       </button>
     </div>
   );
 
-  const button = <button onClick={handleOpen}>{buttonText}</button>;
+  const button = <button onClick={open}>{buttonText}</button>;
 
   return isOpen ? modal : button;
 }

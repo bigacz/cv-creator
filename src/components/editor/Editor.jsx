@@ -47,7 +47,7 @@ function Editor({ cvData, handlers }) {
         handleDutiesAdd={handleDutiesAdd}
         handleDutiesRemove={handleDutiesRemove}
       />
-      <ConfirmModal confirmHandler={handleEditorClean} buttonText="Clear" />
+      <ConfirmModal handleConfirm={handleEditorClean} buttonText="Clear" />
       <button type="button" onClick={handlePreviewOpen}>
         Open preview
       </button>
