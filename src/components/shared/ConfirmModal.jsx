@@ -1,3 +1,5 @@
+import 'styles/components/shared/ConfirmModal.css';
+
 import { useState } from 'react';
 
 function ConfirmModal({

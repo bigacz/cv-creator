@@ -1,3 +1,5 @@
+import 'styles/components/preview/Preview.css';
+
 import GeneralPreview from 'components/preview/GeneralPreview';
 import EducationPreview from 'components/preview/EducationPreview';
 import ExperiencePreview from 'components/preview/ExperiencePreview';

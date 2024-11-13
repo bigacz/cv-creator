@@ -1,3 +1,5 @@
+import 'styles/components/preview/ExperiencePreview.css';
+
 function ExperiencePreview({ jobs }) {
   const jobSections = jobs.map((job) => {
     const {

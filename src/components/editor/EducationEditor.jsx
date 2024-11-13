@@ -1,3 +1,5 @@
+import 'styles/components/editor/EducationEditor.css';
+
 function EducationEditor({ schools, handleChange, handleAdd, handleRemove }) {
   const isRemoveButtonAdded = schools.length > 1;
 

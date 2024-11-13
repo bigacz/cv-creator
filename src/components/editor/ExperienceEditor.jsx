@@ -1,3 +1,5 @@
+import 'styles/components/editor/ExperienceEditor.css';
+
 import FlexInputList from 'components/editor/FlexInputList';
 
 function ExperienceEditor({

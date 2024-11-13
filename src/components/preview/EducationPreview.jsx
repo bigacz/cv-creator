@@ -1,3 +1,5 @@
+import 'styles/components/preview/EducationPreview.css';
+
 function EducationPreview({ schools }) {
   const schoolSections = schools.map((school) => {
     const { id, schoolName, studyTitle, yearStarted, yearEnded, isEnded } =

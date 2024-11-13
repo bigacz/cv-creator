@@ -1,3 +1,5 @@
+import 'styles/components/editor/FlexInputList.css';
+
 function FlexInputList({ entries, handleChange, handleAdd, handleRemove }) {
   const isRemoveButtonAdded = entries.length > 1;
 

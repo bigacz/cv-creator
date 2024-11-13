@@ -1,3 +1,5 @@
+import 'styles/components/editor/GeneralEditor.css';
+
 function GeneralEditor({ credentials, handleChange }) {
   const { first, last, email, phone } = credentials;
 

@@ -10,6 +10,7 @@ export default defineConfig({
       assets: '/src/assets',
       lib: '/src/lib',
       src: '/src',
+      styles: '/src/styles',
     },
   },
 });

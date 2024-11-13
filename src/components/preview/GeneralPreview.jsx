@@ -1,3 +1,5 @@
+import 'styles/components/preview/GeneralPreview.css';
+
 function GeneralPreview({ credentials }) {
   const { first, last, email, phone } = credentials;
 

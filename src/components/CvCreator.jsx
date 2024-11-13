@@ -1,3 +1,5 @@
+import 'styles/components/CvCreator.css';
+
 import { useState } from 'react';
 
 import {

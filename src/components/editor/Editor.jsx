@@ -1,3 +1,5 @@
+import 'styles/components/editor/Editor.css';
+
 import EducationEditor from 'components/editor/EducationEditor.jsx';
 import ExperienceEditor from 'components/editor/ExperienceEditor.jsx';
 import GeneralEditor from 'components/editor/GeneralEditor.jsx';
