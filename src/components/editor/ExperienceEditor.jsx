@@ -39,7 +39,7 @@ function ExperienceEditor({
     return (
       <fieldset key={id} data-index={id}>
         <label>
-          Company name:
+          <span>Company name:</span>
           <input
             type="text"
             value={companyName}
@@ -49,7 +49,7 @@ function ExperienceEditor({
           />
         </label>
         <label>
-          Position title:
+          <span>Position title:</span>
           <input
             type="text"
             value={positionTitle}
@@ -59,7 +59,7 @@ function ExperienceEditor({
           />
         </label>
         <label>
-          Responsibilities:
+          <span>Responsibilities:</span>
           <FlexInputList
             entries={duties}
             handleChange={handleDutiesChangeBinded}
@@ -68,7 +68,7 @@ function ExperienceEditor({
           />
         </label>
         <label>
-          Year started:
+          <span>Year started:</span>
           <input
             type="number"
             value={yearStarted}
@@ -78,7 +78,7 @@ function ExperienceEditor({
           />
         </label>
         <label>
-          Year ended:
+          <span>Year ended:</span>
           <input
             type="number"
             value={yearEnded}
@@ -88,7 +88,7 @@ function ExperienceEditor({
           />
         </label>
         <label>
-          Still working:
+          <span>Still working:</span>
           <input
             type="checkbox"
             checked={isEnded}

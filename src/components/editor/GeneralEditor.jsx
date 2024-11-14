@@ -6,7 +6,7 @@ function GeneralEditor({ credentials, handleChange }) {
   return (
     <fieldset>
       <label>
-        First name:
+        <span>First name:</span>
         <input
           type="text"
           value={first}
@@ -16,7 +16,7 @@ function GeneralEditor({ credentials, handleChange }) {
         />
       </label>
       <label>
-        Last name:
+        <span>Last name:</span>
         <input
           type="text"
           value={last}
@@ -26,7 +26,7 @@ function GeneralEditor({ credentials, handleChange }) {
         />
       </label>
       <label>
-        E-mail:
+        <span>E-mail:</span>
         <input
           type="email"
           value={email}
@@ -36,7 +36,7 @@ function GeneralEditor({ credentials, handleChange }) {
         />
       </label>
       <label>
-        Phone number:
+        <span>Phone number:</span>
         <input
           type="tel"
           value={phone}

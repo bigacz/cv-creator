@@ -10,7 +10,7 @@ function EducationEditor({ schools, handleChange, handleAdd, handleRemove }) {
     return (
       <fieldset key={id} data-index={id}>
         <label>
-          School name:
+          <span>School name:</span>
           <input
             type="text"
             value={schoolName}
@@ -20,7 +20,7 @@ function EducationEditor({ schools, handleChange, handleAdd, handleRemove }) {
           />
         </label>
         <label>
-          Title of study:
+          <span>Title of study:</span>
           <input
             type="text"
             value={studyTitle}
@@ -30,7 +30,7 @@ function EducationEditor({ schools, handleChange, handleAdd, handleRemove }) {
           />
         </label>
         <label>
-          Year started:
+          <span>Year started:</span>
           <input
             type="number"
             value={yearStarted}
@@ -40,7 +40,7 @@ function EducationEditor({ schools, handleChange, handleAdd, handleRemove }) {
           />
         </label>
         <label>
-          Year ended:
+          <span>Year ended:</span>
           <input
             type="number"
             value={yearEnded}
@@ -50,7 +50,7 @@ function EducationEditor({ schools, handleChange, handleAdd, handleRemove }) {
           />
         </label>
         <label>
-          Still attending:
+          <span>Still attending:</span>
           <input
             type="checkbox"
             checked={isEnded}
