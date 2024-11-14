@@ -37,7 +37,7 @@ function ExperienceEditor({
     }
 
     return (
-      <fieldset key={id} data-index={id}>
+      <fieldset key={id}>
         <label>
           <span>Company name:</span>
           <input

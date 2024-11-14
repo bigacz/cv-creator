@@ -8,7 +8,7 @@ function EducationEditor({ schools, handleChange, handleAdd, handleRemove }) {
       school;
 
     return (
-      <fieldset key={id} data-index={id}>
+      <fieldset key={id}>
         <label>
           <span>School name:</span>
           <input
