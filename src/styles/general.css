@@ -7,9 +7,37 @@ h6 {
   margin: 0;
 }
 
+fieldset {
+  padding: 1rem;
+  margin: 0;
+}
+
 body {
   background-color: rgb(39, 39, 39);
   color: white;
 
   min-height: 100dvh;
+}
+
+.label-input--regular {
+  display: grid;
+  grid-template-rows: max-content 1.9rem;
+  gap: 2px;
+}
+
+.label-input--checkbox {
+  display: grid;
+  grid-template-columns: max-content 1.5rem;
+  grid-auto-rows: 1.5rem;
+  gap: 4px;
+  justify-content: center;
+  align-content: center;
+}
+
+.label-input--checkbox span {
+  align-self: center;
+}
+
+.button {
+  padding: 0.4rem 1.5rem;
 }
