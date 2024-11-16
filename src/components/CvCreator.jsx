@@ -171,11 +171,16 @@ function CvCreator() {
     handleEditorClean,
   };
 
+  let rendered;
   if (isPreviewOpen) {
-    return <Preview cvData={cvData} handlePreviewClose={handlePreviewClose} />;
+    rendered = (
+      <Preview cvData={cvData} handlePreviewClose={handlePreviewClose} />
+    );
   } else {
-    return <Editor cvData={cvData} handlers={editorHandlers} />;
+    rendered = <Editor cvData={cvData} handlers={editorHandlers} />;
   }
+
+  return <div className="cv-creator">{rendered}</div>;
 }
 
 export default CvCreator;
