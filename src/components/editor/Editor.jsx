@@ -29,7 +29,7 @@ function Editor({ cvData, handlers }) {
   } = handlers;
 
   return (
-    <div>
+    <div className="editor">
       <GeneralEditor
         credentials={credentials}
         handleChange={handleCredentialsChange}

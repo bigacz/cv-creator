@@ -1,0 +1,5 @@
+.editor {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: minmax(min-content, 800px);
+}
