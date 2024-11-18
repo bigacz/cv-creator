@@ -37,8 +37,8 @@ function ExperienceEditor({
     }
 
     return (
-      <fieldset key={id}>
-        <label>
+      <fieldset key={id} className="experience-editor">
+        <label className="experience-editor__company label-input--regular">
           <span>Company name:</span>
           <input
             type="text"
@@ -48,7 +48,7 @@ function ExperienceEditor({
             }}
           />
         </label>
-        <label>
+        <label className="experience-editor__position label-input--regular">
           <span>Position title:</span>
           <input
             type="text"
@@ -58,7 +58,7 @@ function ExperienceEditor({
             }}
           />
         </label>
-        <label>
+        <label className="experience-editor__duties">
           <span>Responsibilities:</span>
           <FlexInputList
             entries={duties}
@@ -67,7 +67,7 @@ function ExperienceEditor({
             handleRemove={handleDutiesRemoveBinded}
           />
         </label>
-        <label>
+        <label className="label-input--regular">
           <span>Year started:</span>
           <input
             type="number"
@@ -77,7 +77,7 @@ function ExperienceEditor({
             }}
           />
         </label>
-        <label>
+        <label className="label-input--regular">
           <span>Year ended:</span>
           <input
             type="number"
@@ -87,7 +87,7 @@ function ExperienceEditor({
             }}
           />
         </label>
-        <label>
+        <label className="experience-editor__present label-input--checkbox">
           <span>Still working:</span>
           <input
             type="checkbox"
@@ -99,6 +99,7 @@ function ExperienceEditor({
         </label>
         {isRemoveButtonAdded && (
           <button
+            className="experience-editor__remove button"
             type="button"
             onClick={() => {
               handleRemove(id);
