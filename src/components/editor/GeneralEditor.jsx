@@ -4,8 +4,8 @@ function GeneralEditor({ credentials, handleChange }) {
   const { first, last, email, phone } = credentials;
 
   return (
-    <fieldset>
-      <label>
+    <fieldset className="general-editor">
+      <label className="label-input--regular">
         <span>First name:</span>
         <input
           type="text"
@@ -15,7 +15,7 @@ function GeneralEditor({ credentials, handleChange }) {
           }}
         />
       </label>
-      <label>
+      <label className="label-input--regular">
         <span>Last name:</span>
         <input
           type="text"
@@ -25,7 +25,7 @@ function GeneralEditor({ credentials, handleChange }) {
           }}
         />
       </label>
-      <label>
+      <label className="general-editor__email label-input--regular">
         <span>E-mail:</span>
         <input
           type="email"
@@ -35,7 +35,7 @@ function GeneralEditor({ credentials, handleChange }) {
           }}
         />
       </label>
-      <label>
+      <label className="general-editor__phone label-input--regular">
         <span>Phone number:</span>
         <input
           type="tel"
