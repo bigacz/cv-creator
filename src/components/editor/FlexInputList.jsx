@@ -22,7 +22,7 @@ function FlexInputList({ entries, handleChange, handleAdd, handleRemove }) {
               handleRemove(id);
             }}
           >
-            Remove
+            x
           </button>
         )}
       </li>
@@ -30,12 +30,16 @@ function FlexInputList({ entries, handleChange, handleAdd, handleRemove }) {
   });
 
   return (
-    <ul>
-      {listItems}
-      <button type="button" onClick={handleAdd}>
-        +
+    <div className="flex-input-list">
+      <ul className="flex-input-list__list">{listItems}</ul>
+      <button
+        className="flex-input-list__add button"
+        type="button"
+        onClick={handleAdd}
+      >
+        Add
       </button>
-    </ul>
+    </div>
   );
 }
 
