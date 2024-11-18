@@ -8,8 +8,8 @@ function EducationEditor({ schools, handleChange, handleAdd, handleRemove }) {
       school;
 
     return (
-      <fieldset key={id}>
-        <label>
+      <fieldset key={id} className="education-editor">
+        <label className="education-editor__name label-input--regular">
           <span>School name:</span>
           <input
             type="text"
@@ -19,7 +19,7 @@ function EducationEditor({ schools, handleChange, handleAdd, handleRemove }) {
             }}
           />
         </label>
-        <label>
+        <label className="education-editor__title label-input--regular">
           <span>Title of study:</span>
           <input
             type="text"
@@ -29,7 +29,7 @@ function EducationEditor({ schools, handleChange, handleAdd, handleRemove }) {
             }}
           />
         </label>
-        <label>
+        <label className="label-input--regular">
           <span>Year started:</span>
           <input
             type="number"
@@ -39,7 +39,7 @@ function EducationEditor({ schools, handleChange, handleAdd, handleRemove }) {
             }}
           />
         </label>
-        <label>
+        <label className="label-input--regular">
           <span>Year ended:</span>
           <input
             type="number"
@@ -49,8 +49,8 @@ function EducationEditor({ schools, handleChange, handleAdd, handleRemove }) {
             }}
           />
         </label>
-        <label>
-          <span>Still attending:</span>
+        <label className="education-editor__present label-input--checkbox">
+          <span>Present:</span>
           <input
             type="checkbox"
             checked={isEnded}
@@ -61,6 +61,7 @@ function EducationEditor({ schools, handleChange, handleAdd, handleRemove }) {
         </label>
         {isRemoveButtonAdded && (
           <button
+            className="education-editor__remove button"
             type="button"
             onClick={() => {
               handleRemove(id);

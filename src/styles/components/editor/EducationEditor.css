@@ -1,0 +1,21 @@
+.education-editor {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 1rem;
+  row-gap: 0.5rem;
+}
+
+.education-editor__name,
+.education-editor__title {
+  grid-column: span 2;
+}
+
+.education-editor__present {
+  grid-column: 2 / 3;
+}
+
+.education-editor__remove {
+  grid-column: 1 / 2;
+  grid-row: 5 / 6;
+  justify-self: center;
+}
