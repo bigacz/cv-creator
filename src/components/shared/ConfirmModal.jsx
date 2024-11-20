@@ -34,7 +34,11 @@ function ConfirmModal({
     </div>
   );
 
-  const button = <button onClick={open}>{buttonText}</button>;
+  const button = (
+    <button className="button" onClick={open}>
+      {buttonText}
+    </button>
+  );
 
   return isOpen ? modal : button;
 }

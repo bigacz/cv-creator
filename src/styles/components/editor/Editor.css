@@ -3,3 +3,8 @@
   justify-content: center;
   grid-template-columns: minmax(min-content, 800px);
 }
+
+.editor__buttons-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+}
