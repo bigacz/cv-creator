@@ -8,9 +8,9 @@ function EducationEditor({ schools, handleChange, handleAdd, handleRemove }) {
       school;
 
     return (
-      <fieldset key={id} className="education-editor">
-        <h2 className="education-editor__header">Education</h2>
-        <label className="education-editor__name label-input--regular">
+      <fieldset key={id} className="education-editor__section">
+        <h2 className="education-editor__section__header">Education</h2>
+        <label className="education-editor__section__name label-input--regular">
           <span>School name:</span>
           <input
             type="text"
@@ -20,7 +20,7 @@ function EducationEditor({ schools, handleChange, handleAdd, handleRemove }) {
             }}
           />
         </label>
-        <label className="education-editor__title label-input--regular">
+        <label className="education-editor__section__title label-input--regular">
           <span>Title of study:</span>
           <input
             type="text"
@@ -50,7 +50,7 @@ function EducationEditor({ schools, handleChange, handleAdd, handleRemove }) {
             }}
           />
         </label>
-        <label className="education-editor__present label-input--checkbox">
+        <label className="education-editor__section__present label-input--checkbox">
           <span>Present:</span>
           <input
             type="checkbox"
@@ -62,7 +62,7 @@ function EducationEditor({ schools, handleChange, handleAdd, handleRemove }) {
         </label>
         {isRemoveButtonAdded && (
           <button
-            className="education-editor__remove button"
+            className="education-editor__section__remove button"
             type="button"
             onClick={() => {
               handleRemove(id);
@@ -76,7 +76,7 @@ function EducationEditor({ schools, handleChange, handleAdd, handleRemove }) {
   });
 
   return (
-    <fieldset>
+    <fieldset className="education-editor">
       {schoolFieldsets}
       <button type="button" onClick={handleAdd}>
         Add
