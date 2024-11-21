@@ -38,7 +38,6 @@ function ExperienceEditor({
 
     return (
       <fieldset key={id} className="experience-editor__section">
-        <h2>Work</h2>
         <label className="experience-editor__section__company label-input--regular">
           <span>Company name:</span>
           <input
@@ -115,6 +114,7 @@ function ExperienceEditor({
 
   return (
     <fieldset className="experience-editor">
+      <h2>Work</h2>
       {jobFieldsets}
       <button type="button" onClick={handleAdd}>
         Add

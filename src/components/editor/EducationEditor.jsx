@@ -9,7 +9,6 @@ function EducationEditor({ schools, handleChange, handleAdd, handleRemove }) {
 
     return (
       <fieldset key={id} className="education-editor__section">
-        <h2 className="education-editor__section__header">Education</h2>
         <label className="education-editor__section__name label-input--regular">
           <span>School name:</span>
           <input
@@ -77,6 +76,7 @@ function EducationEditor({ schools, handleChange, handleAdd, handleRemove }) {
 
   return (
     <fieldset className="education-editor">
+      <h2 className="education-editor__section__header">Education</h2>
       {schoolFieldsets}
       <button type="button" onClick={handleAdd}>
         Add
