@@ -37,9 +37,9 @@ function ExperienceEditor({
     }
 
     return (
-      <fieldset key={id} className="experience-editor">
+      <fieldset key={id} className="experience-editor__section">
         <h2>Work</h2>
-        <label className="experience-editor__company label-input--regular">
+        <label className="experience-editor__section__company label-input--regular">
           <span>Company name:</span>
           <input
             type="text"
@@ -49,7 +49,7 @@ function ExperienceEditor({
             }}
           />
         </label>
-        <label className="experience-editor__position label-input--regular">
+        <label className="experience-editor__section__position label-input--regular">
           <span>Position title:</span>
           <input
             type="text"
@@ -59,7 +59,7 @@ function ExperienceEditor({
             }}
           />
         </label>
-        <label className="experience-editor__duties">
+        <label className="experience-editor__section__duties">
           <span>Responsibilities:</span>
           <FlexInputList
             entries={duties}
@@ -88,7 +88,7 @@ function ExperienceEditor({
             }}
           />
         </label>
-        <label className="experience-editor__present label-input--checkbox">
+        <label className="experience-editor__section__present label-input--checkbox">
           <span>Still working:</span>
           <input
             type="checkbox"
@@ -100,7 +100,7 @@ function ExperienceEditor({
         </label>
         {isRemoveButtonAdded && (
           <button
-            className="experience-editor__remove button"
+            className="experience-editor__section__remove button"
             type="button"
             onClick={() => {
               handleRemove(id);
@@ -114,7 +114,7 @@ function ExperienceEditor({
   });
 
   return (
-    <fieldset>
+    <fieldset className="experience-editor">
       {jobFieldsets}
       <button type="button" onClick={handleAdd}>
         Add
