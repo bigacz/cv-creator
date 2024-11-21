@@ -5,6 +5,7 @@ function GeneralEditor({ credentials, handleChange }) {
 
   return (
     <fieldset className="general-editor">
+      <h2 className="general-editor__header">Personal</h2>
       <label className="label-input--regular">
         <span>First name:</span>
         <input

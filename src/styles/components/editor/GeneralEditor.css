@@ -5,6 +5,7 @@
   row-gap: 0.5rem;
 }
 
+.general-editor__header,
 .general-editor__email,
 .general-editor__phone {
   grid-column: span 2;

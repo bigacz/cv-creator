@@ -5,6 +5,7 @@
   row-gap: 0.5rem;
 }
 
+.education-editor__header,
 .education-editor__name,
 .education-editor__title {
   grid-column: span 2;
