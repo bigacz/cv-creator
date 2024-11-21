@@ -76,7 +76,7 @@ function EducationEditor({ schools, handleChange, handleAdd, handleRemove }) {
 
   return (
     <fieldset className="education-editor">
-      <h2 className="education-editor__section__header">Education</h2>
+      <h2>Education</h2>
       {schoolFieldsets}
       <button type="button" onClick={handleAdd}>
         Add

@@ -9,7 +9,6 @@
   row-gap: 0.5rem;
 }
 
-.education-editor__section__header,
 .education-editor__section__name,
 .education-editor__section__title {
   grid-column: span 2;
