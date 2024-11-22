@@ -1,4 +1,6 @@
 .general-editor {
+  background-color: #88d498;
+
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 1rem;
