@@ -26,6 +26,7 @@ function Editor({ cvData, handlers }) {
     handlePreviewOpen,
 
     handleEditorClean,
+    handleEditorFill,
   } = handlers;
 
   return (
@@ -51,6 +52,11 @@ function Editor({ cvData, handlers }) {
       />
       <div className="editor__buttons-wrapper">
         <ConfirmModal handleConfirm={handleEditorClean} buttonText="Clear" />
+        <ConfirmModal
+          handleConfirm={handleEditorFill}
+          buttonText="Fill"
+          questionText="Fill the editor?"
+        />
         <button className="button" type="button" onClick={handlePreviewOpen}>
           Open preview
         </button>

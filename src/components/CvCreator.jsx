@@ -11,6 +11,11 @@ import {
 
 import Editor from 'components/editor/Editor';
 import Preview from 'components/preview/Preview';
+import {
+  placeholderCredentials,
+  placeholderSchools,
+  placeholderJobs,
+} from 'src/data/placeholderCvValues';
 
 function CvCreator() {
   const [credentials, setCredentials] = useState({ ...defaultCredentials });
@@ -151,6 +156,12 @@ function CvCreator() {
     setJobs([{ ...defaultJob }]);
   }
 
+  function handleEditorFill() {
+    setCredentials({ ...placeholderCredentials });
+    setSchools([...placeholderSchools]);
+    setJobs([...placeholderJobs]);
+  }
+
   const editorHandlers = {
     handleCredentialsChange,
 
@@ -169,6 +180,7 @@ function CvCreator() {
     handlePreviewOpen,
 
     handleEditorClean,
+    handleEditorFill,
   };
 
   let rendered;
