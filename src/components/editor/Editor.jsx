@@ -51,11 +51,17 @@ function Editor({ cvData, handlers }) {
         handleDutiesRemove={handleDutiesRemove}
       />
       <div className="editor__buttons-wrapper">
-        <ConfirmModal handleConfirm={handleEditorClean} buttonText="Clear" />
+        <ConfirmModal
+          handleConfirm={handleEditorClean}
+          buttonText="Clear"
+          questionText="Clear the editor?"
+          resultText="This will remove all your current input."
+        />
         <ConfirmModal
           handleConfirm={handleEditorFill}
           buttonText="Fill"
           questionText="Fill the editor?"
+          resultText="This will remove all your current input."
         />
         <button className="button" type="button" onClick={handlePreviewOpen}>
           Open preview

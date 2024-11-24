@@ -4,8 +4,9 @@ import { useState } from 'react';
 
 function ConfirmModal({
   handleConfirm,
-  buttonText = 'Do something',
-  questionText = 'Are you sure?',
+  buttonText = 'It will have consequences',
+  questionText = 'Perform this action?',
+  resultText,
 }) {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -22,9 +23,12 @@ function ConfirmModal({
     close();
   }
 
+  const resultParagraph = resultText != null && <p>{resultText}</p>;
+
   const modal = (
     <div>
-      <p>{questionText}</p>
+      <h3>{questionText}</h3>
+      {resultParagraph}
       <button type="button" onClick={close}>
         Cancel
       </button>
