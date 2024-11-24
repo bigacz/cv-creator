@@ -2,7 +2,7 @@ import 'styles/components/preview/EducationPreview.css';
 
 function EducationPreview({ schools }) {
   const schoolSections = schools.map((school) => {
-    const { id, schoolName, studyTitle, yearStarted, yearEnded, isEnded } =
+    const { id, schoolName, studyTitle, yearStarted, yearEnded, isActive } =
       school;
 
     return (
@@ -11,7 +11,7 @@ function EducationPreview({ schools }) {
         <p>{studyTitle}</p>
         <p>{yearStarted}</p>
         <p>{yearEnded}</p>
-        <p>{isEnded}</p>
+        <p>{isActive}</p>
       </div>
     );
   });

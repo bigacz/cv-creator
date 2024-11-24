@@ -9,7 +9,7 @@ function ExperiencePreview({ jobs }) {
       duties,
       yearStarted,
       yearEnded,
-      isEnded,
+      isActive,
     } = job;
 
     const dutiesList = duties.map((duty) => {
@@ -23,7 +23,7 @@ function ExperiencePreview({ jobs }) {
         {dutiesList}
         <p>{yearStarted}</p>
         <p>{yearEnded}</p>
-        <p>{isEnded}</p>
+        <p>{isActive}</p>
       </div>
     );
   });

@@ -11,7 +11,7 @@ const defaultSchool = {
   studyTitle: '',
   yearStarted: '',
   yearEnded: '',
-  isEnded: false,
+  isActive: false,
 };
 
 const defaultDuty = { id: 0, value: '' };
@@ -23,7 +23,7 @@ const defaultJob = {
   duties: [{ ...defaultDuty }],
   yearStarted: '',
   yearEnded: '',
-  isEnded: false,
+  isActive: false,
 };
 
 export { defaultCredentials, defaultSchool, defaultJob, defaultDuty };

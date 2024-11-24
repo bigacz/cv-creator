@@ -12,7 +12,7 @@ const placeholderSchools = [
     studyTitle: 'High School Diploma',
     yearStarted: '2005',
     yearEnded: '2009',
-    isEnded: true,
+    isActive: false,
   },
   {
     id: 2,
@@ -20,7 +20,7 @@ const placeholderSchools = [
     studyTitle: 'Master of Business Administration (MBA)',
     yearStarted: '2016',
     yearEnded: '2018',
-    isEnded: true,
+    isActive: false,
   },
   {
     id: 5,
@@ -28,7 +28,7 @@ const placeholderSchools = [
     studyTitle: 'Diploma in Graphic Design',
     yearStarted: '2019',
     yearEnded: '',
-    isEnded: false,
+    isActive: true,
   },
 ];
 
@@ -52,7 +52,7 @@ const placeholderJobs = [
     ],
     yearStarted: '2018',
     yearEnded: '2021',
-    isEnded: true,
+    isActive: false,
   },
   {
     id: 4,
@@ -78,7 +78,7 @@ const placeholderJobs = [
     ],
     yearStarted: '2017',
     yearEnded: '2019',
-    isEnded: true,
+    isActive: false,
   },
   {
     id: 5,
@@ -109,7 +109,7 @@ const placeholderJobs = [
     ],
     yearStarted: '2020',
     yearEnded: '',
-    isEnded: false,
+    isActive: true,
   },
 ];
 

@@ -21,7 +21,7 @@ function ExperienceEditor({
       duties,
       yearStarted,
       yearEnded,
-      isEnded,
+      isActive,
     } = job;
 
     function handleDutiesChangeBinded(dutyId, value) {
@@ -88,12 +88,12 @@ function ExperienceEditor({
           />
         </label>
         <label className="experience-editor__section__present label-input--checkbox">
-          <span>Still working:</span>
+          <span>Current:</span>
           <input
             type="checkbox"
-            checked={isEnded}
+            checked={isActive}
             onChange={(event) => {
-              handleChange(id, 'isEnded', event.target.checked);
+              handleChange(id, 'isActive', event.target.checked);
             }}
           />
         </label>

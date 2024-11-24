@@ -4,7 +4,7 @@ function EducationEditor({ schools, handleChange, handleAdd, handleRemove }) {
   const isRemoveButtonAdded = schools.length > 1;
 
   const schoolFieldsets = schools.map((school) => {
-    const { id, schoolName, studyTitle, yearStarted, yearEnded, isEnded } =
+    const { id, schoolName, studyTitle, yearStarted, yearEnded, isActive } =
       school;
 
     return (
@@ -50,12 +50,12 @@ function EducationEditor({ schools, handleChange, handleAdd, handleRemove }) {
           />
         </label>
         <label className="education-editor__section__present label-input--checkbox">
-          <span>Present:</span>
+          <span>Current:</span>
           <input
             type="checkbox"
-            checked={isEnded}
+            checked={isActive}
             onChange={(event) => {
-              handleChange(id, 'isEnded', event.target.checked);
+              handleChange(id, 'isActive', event.target.checked);
             }}
           />
         </label>
