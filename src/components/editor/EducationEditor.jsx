@@ -43,7 +43,8 @@ function EducationEditor({ schools, handleChange, handleAdd, handleRemove }) {
           <span>Year ended:</span>
           <input
             type="number"
-            value={yearEnded}
+            disabled={isActive}
+            value={isActive ? '' : yearEnded}
             onChange={(event) => {
               handleChange(id, 'yearEnded', event.target.value);
             }}
