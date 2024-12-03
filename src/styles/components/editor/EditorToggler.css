@@ -1,6 +1,6 @@
-.editor-section-button--open,
-.editor-section-button--closed,
-.editor-section-button {
+.editor-toggler--open,
+.editor-toggler--closed,
+.editor-toggler {
   font-size: 1rem;
   padding: 0;
   display: grid;
@@ -11,14 +11,14 @@
   padding: 0 1rem 0 0.5rem;
 }
 
-.editor-section-button__arrow {
+.editor-toggler__arrow {
   transition: transform 0.2s;
 }
 
-.editor-section-button--open .editor-section-button__arrow {
+.editor-toggler--open .editor-toggler__arrow {
   transform: rotateX(180deg);
 }
 
-.editor-section-button--closed .editor-section-button__arrow {
+.editor-toggler--closed .editor-toggler__arrow {
   transform: rotate(0);
 }

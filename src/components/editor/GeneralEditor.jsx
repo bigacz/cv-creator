@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import EditorSectionButton from 'components/editor/EditorSectionButton';
+import EditorToggler from 'components/editor/EditorToggler';
 
 import 'styles/components/editor/GeneralEditor.css';
 
@@ -60,9 +60,9 @@ function GeneralEditor({ credentials, handleChange }) {
 
   return (
     <div className="general-editor">
-      <EditorSectionButton
+      <EditorToggler
         isOpen={isOpen}
-        toggle={toggleEditor}
+        handleToggle={toggleEditor}
         title="Personal"
       />
       {isOpen && fieldset}
