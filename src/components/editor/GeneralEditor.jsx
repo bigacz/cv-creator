@@ -1,11 +1,20 @@
+import { useState } from 'react';
+
+import EditorSectionButton from 'components/editor/EditorSectionButton';
+
 import 'styles/components/editor/GeneralEditor.css';
 
 function GeneralEditor({ credentials, handleChange }) {
   const { first, last, email, phone } = credentials;
 
-  return (
-    <fieldset className="general-editor">
-      <h2 className="general-editor__header">Personal</h2>
+  const [isOpen, setIsOpen] = useState(true);
+
+  function toggleEditor() {
+    setIsOpen(!isOpen);
+  }
+
+  const fieldset = (
+    <fieldset className="general-editor__fieldset">
       <label className="label-input--regular">
         <span>First name:</span>
         <input
@@ -26,7 +35,7 @@ function GeneralEditor({ credentials, handleChange }) {
           }}
         />
       </label>
-      <label className="general-editor__email label-input--regular">
+      <label className="general-editor__fieldset__email label-input--regular">
         <span>E-mail:</span>
         <input
           type="email"
@@ -36,7 +45,7 @@ function GeneralEditor({ credentials, handleChange }) {
           }}
         />
       </label>
-      <label className="general-editor__phone label-input--regular">
+      <label className="general-editor__fieldset__phone label-input--regular">
         <span>Phone number:</span>
         <input
           type="tel"
@@ -47,6 +56,17 @@ function GeneralEditor({ credentials, handleChange }) {
         />
       </label>
     </fieldset>
+  );
+
+  return (
+    <div className="general-editor">
+      <EditorSectionButton
+        isOpen={isOpen}
+        toggle={toggleEditor}
+        title="Personal"
+      />
+      {isOpen && fieldset}
+    </div>
   );
 }
 
