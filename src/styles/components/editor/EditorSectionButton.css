@@ -1,0 +1,24 @@
+.editor-section-button--open,
+.editor-section-button--closed,
+.editor-section-button {
+  font-size: 1rem;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 2rem;
+  grid-template-rows: max-content;
+  justify-items: start;
+  align-items: center;
+  padding: 0 1rem 0 0.5rem;
+}
+
+.editor-section-button__arrow {
+  transition: transform 0.2s;
+}
+
+.editor-section-button--open .editor-section-button__arrow {
+  transform: rotateX(180deg);
+}
+
+.editor-section-button--closed .editor-section-button__arrow {
+  transform: rotate(0);
+}
