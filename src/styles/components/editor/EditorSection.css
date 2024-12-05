@@ -1,0 +1,14 @@
+.editor-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 1rem;
+  row-gap: 0.5rem;
+}
+
+.editor-section__label--width-2 {
+  grid-column: span 2;
+}
+
+.editor-section__label--width-1 {
+  grid-column: span 1;
+}
