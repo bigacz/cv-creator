@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 import EditorToggler from 'components/editor/EditorToggler';
+import EditorSection from 'components/editor/EditorSection';
 
 import 'styles/components/editor/GeneralEditor.css';
 
@@ -13,50 +14,46 @@ function GeneralEditor({ credentials, handleChange }) {
     setIsOpen(!isOpen);
   }
 
-  const fieldset = (
-    <fieldset className="general-editor__fieldset">
-      <label className="label-input--regular">
-        <span>First name:</span>
-        <input
-          type="text"
-          value={first}
-          onChange={(event) => {
-            handleChange('first', event);
-          }}
-        />
-      </label>
-      <label className="label-input--regular">
-        <span>Last name:</span>
-        <input
-          type="text"
-          value={last}
-          onChange={(event) => {
-            handleChange('last', event);
-          }}
-        />
-      </label>
-      <label className="general-editor__fieldset__email label-input--regular">
-        <span>E-mail:</span>
-        <input
-          type="email"
-          value={email}
-          onChange={(event) => {
-            handleChange('email', event);
-          }}
-        />
-      </label>
-      <label className="general-editor__fieldset__phone label-input--regular">
-        <span>Phone number:</span>
-        <input
-          type="tel"
-          value={phone}
-          onChange={(event) => {
-            handleChange('phone', event);
-          }}
-        />
-      </label>
-    </fieldset>
-  );
+  const inputsParameters = [
+    {
+      name: 'first',
+      value: first,
+      type: 'text',
+      labelTitle: 'First name',
+      width: 1,
+    },
+    {
+      name: 'last',
+      value: last,
+      type: 'text',
+      labelTitle: 'Last name',
+      width: 1,
+    },
+    {
+      name: 'email',
+      value: email,
+      type: 'email',
+      labelTitle: 'E-mail',
+      width: 2,
+    },
+    {
+      name: 'phone',
+      value: phone,
+      type: 'tel',
+      labelTitle: 'Phone number',
+      width: 2,
+    },
+  ];
+
+  inputsParameters.forEach((input) => {
+    const name = input.name;
+
+    input.handleChange = function (value) {
+      handleChange(name, value);
+    };
+  });
+
+  const editor = <EditorSection inputsParameters={inputsParameters} />;
 
   return (
     <div className="general-editor">
@@ -65,7 +62,7 @@ function GeneralEditor({ credentials, handleChange }) {
         handleToggle={toggleEditor}
         title="Personal"
       />
-      {isOpen && fieldset}
+      {isOpen && editor}
     </div>
   );
 }

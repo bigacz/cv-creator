@@ -26,9 +26,7 @@ function CvCreator() {
 
   const cvData = { credentials, schools, jobs };
 
-  function handleCredentialsChange(name, event) {
-    const value = event.target.value;
-
+  function handleCredentialsChange(name, value) {
     const newCredentials = { ...credentials, [name]: value };
 
     setCredentials(newCredentials);

@@ -3,15 +3,3 @@
 
   display: grid;
 }
-
-.general-editor__fieldset {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 1rem;
-  row-gap: 0.5rem;
-}
-
-.general-editor__fieldset__email,
-.general-editor__fieldset__phone {
-  grid-column: span 2;
-}
