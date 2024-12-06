@@ -2,7 +2,14 @@ import 'styles/components/editor/EditorSection.css';
 
 function EditorSection({ inputsParameters }) {
   const labeledInputs = inputsParameters.map((inputData) => {
-    const { name, value, width = 2, labelTitle, type, onChange } = inputData;
+    const {
+      name,
+      value,
+      width = 2,
+      labelTitle,
+      type,
+      handleChange,
+    } = inputData;
 
     const widthClass = `editor-section__label--width-${width}`;
     const elementClasses = `editor-section__label label-input--regular ${widthClass} `;
@@ -15,7 +22,7 @@ function EditorSection({ inputsParameters }) {
           value={value}
           name={name}
           onChange={(event) => {
-            onChange(event.currentTarget.value);
+            handleChange(event.currentTarget.value);
           }}
         />
       </label>
