@@ -14,12 +14,22 @@ function EditorSection({ inputsParameters }) {
     const widthClass = `editor-section__label--width-${width}`;
     const elementClasses = `editor-section__label label-input--regular ${widthClass} `;
 
+    const inputAttributes = {};
+
+    const isCheckbox = type === 'checkbox';
+    if (isCheckbox) {
+      inputAttributes.checked = value;
+    } else {
+      inputAttributes.value = value;
+    }
+
     return (
       <label key={labelTitle} className={elementClasses}>
         <span>{labelTitle}:</span>
         <input
           type={type}
-          value={value}
+          value={isCheckbox ? null : value}
+          checked={isCheckbox ? value : null}
           name={name}
           onChange={(event) => {
             handleChange(event.currentTarget.value);
