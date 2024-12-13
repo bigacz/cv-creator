@@ -5,10 +5,36 @@
   row-gap: 0.5rem;
 }
 
+.editor-section__label--regular {
+  display: grid;
+  grid-template-rows: max-content 1.9rem;
+  gap: 2px;
+}
+
+.editor-section__label--checkbox {
+  display: grid;
+  grid-template-columns: max-content 1.5rem;
+  grid-auto-rows: 1.5rem;
+  gap: 4px;
+  justify-content: center;
+  align-content: center;
+}
+
+.editor-section__label--checkbox span {
+  align-self: center;
+}
+
 .editor-section__label--width-2 {
   grid-column: span 2;
 }
 
 .editor-section__label--width-1 {
   grid-column: span 1;
+}
+
+.editor-section__label--column-1 {
+  grid-column: 1;
+}
+.editor-section__label--column-2 {
+  grid-column: 2;
 }

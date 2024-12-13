@@ -20,6 +20,7 @@ body {
   min-height: 100dvh;
 }
 
+/* Needs to be removed*/
 .label-input--regular {
   display: grid;
   grid-template-rows: max-content 1.9rem;
@@ -38,6 +39,7 @@ body {
 .label-input--checkbox span {
   align-self: center;
 }
+/* */
 
 .button {
   padding: 0.4rem 1.5rem;

@@ -62,7 +62,7 @@ function GeneralEditor({ credentials, handleChange }) {
         handleToggle={toggleEditor}
         title="Personal"
       />
-      {isOpen && editor}
+      {isOpen && <fieldset>{editor}</fieldset>}
     </div>
   );
 }
