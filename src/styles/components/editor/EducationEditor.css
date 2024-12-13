@@ -1,23 +1,14 @@
 .education-editor {
   background-color: #88d498;
+  display: grid;
 }
 
 .education-editor__section {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 1rem;
-  row-gap: 0.5rem;
+  grid-template-columns: 1fr;
 }
 
-.education-editor__section__name,
-.education-editor__section__title {
-  grid-column: span 2;
-}
-
-.education-editor__section__present {
-  grid-column: 2 / 3;
-}
-
+/* Needs to be fixed */
 .education-editor__section__remove {
   grid-column: 1 / 2;
   grid-row: 5 / 6;
