@@ -1,6 +1,7 @@
 import 'styles/components/editor/ExperienceEditor.css';
 
 import FlexInputList from 'components/editor/FlexInputList';
+import Button from 'components/shared/Button';
 
 function ExperienceEditor({
   jobs,
@@ -117,9 +118,9 @@ function ExperienceEditor({
     <fieldset className="experience-editor">
       <h2>Work</h2>
       {jobFieldsets}
-      <button type="button" onClick={handleAdd}>
-        Add
-      </button>
+      <div>
+        <Button handleClick={handleAdd} text="Add" type="add" />
+      </div>
     </fieldset>
   );
 }

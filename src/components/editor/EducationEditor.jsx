@@ -1,5 +1,6 @@
 import 'styles/components/editor/EducationEditor.css';
 import EditorSection from 'components/editor/EditorSection';
+import Button from 'components/shared/Button';
 
 function EducationEditor({ schools, handleChange, handleAdd, handleRemove }) {
   const isRemoveButtonAdded = schools.length > 1;
@@ -76,9 +77,9 @@ function EducationEditor({ schools, handleChange, handleAdd, handleRemove }) {
     <fieldset className="education-editor">
       <h2>Education</h2>
       {schoolFieldsets}
-      <button type="button" onClick={handleAdd}>
-        Add
-      </button>
+      <div>
+        <Button handleClick={handleAdd} text="Add" type="add" />
+      </div>
     </fieldset>
   );
 }
