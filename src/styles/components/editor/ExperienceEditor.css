@@ -20,7 +20,5 @@
 }
 
 .experience-editor__section__remove {
-  grid-column: 1 / 2;
-  grid-row: 6 / 7;
   justify-self: center;
 }

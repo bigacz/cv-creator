@@ -37,6 +37,10 @@ function ExperienceEditor({
       handleDutiesRemove(id, dutyId);
     }
 
+    function handleRemoveBinded() {
+      handleRemove(id);
+    }
+
     return (
       <fieldset key={id} className="experience-editor__section">
         <label className="experience-editor__section__company label-input--regular">
@@ -100,15 +104,13 @@ function ExperienceEditor({
           />
         </label>
         {isRemoveButtonAdded && (
-          <button
-            className="experience-editor__section__remove button"
-            type="button"
-            onClick={() => {
-              handleRemove(id);
-            }}
-          >
-            Remove
-          </button>
+          <div className="experience-editor__section__remove">
+            <Button
+              handleClick={handleRemoveBinded}
+              text="Remove"
+              type="remove"
+            />
+          </div>
         )}
       </fieldset>
     );
