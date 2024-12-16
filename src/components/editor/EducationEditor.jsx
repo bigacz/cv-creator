@@ -55,19 +55,21 @@ function EducationEditor({ schools, handleChange, handleAdd, handleRemove }) {
       };
     });
 
+    function handleRemoveBinded() {
+      handleRemove(id);
+    }
+
     return (
       <fieldset key={id} className="education-editor__section">
         <EditorSection inputsParameters={inputsParameters} />
         {isRemoveButtonAdded && (
-          <button
-            className="education-editor__section__remove button"
-            type="button"
-            onClick={() => {
-              handleRemove(id);
-            }}
-          >
-            Remove
-          </button>
+          <div className="education-editor__section__remove">
+            <Button
+              handleClick={handleRemoveBinded}
+              text="Remove"
+              type="remove"
+            />
+          </div>
         )}
       </fieldset>
     );
