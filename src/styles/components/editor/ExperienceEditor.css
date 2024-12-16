@@ -4,19 +4,7 @@
 
 .experience-editor__section {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 1rem;
-  row-gap: 0.5rem;
-}
-
-.experience-editor__section__company,
-.experience-editor__section__position,
-.experience-editor__section__duties {
-  grid-column: span 2;
-}
-
-.experience-editor__section__present {
-  grid-column: 2 / 3;
+  grid-template-columns: 1fr;
 }
 
 .experience-editor__section__remove {
