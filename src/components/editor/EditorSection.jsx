@@ -1,3 +1,4 @@
+import { isValidElement } from 'react';
 import 'styles/components/editor/EditorSection.css';
 
 function EditorSection({ inputsParameters }) {
@@ -11,6 +12,7 @@ function EditorSection({ inputsParameters }) {
       type,
       handleChange,
       attributes,
+      element,
     } = inputData;
 
     let labelClasses = [
@@ -18,6 +20,17 @@ function EditorSection({ inputsParameters }) {
       `editor-section__label--width-${width}`,
       column && `editor-section__label--column-${column}`,
     ];
+
+    if (isValidElement(element)) {
+      const classes = labelClasses.join(' ');
+
+      return (
+        <label key={labelTitle} className={classes}>
+          <span>{labelTitle}:</span>
+          {element}
+        </label>
+      );
+    }
 
     let inputAttributes = {};
     const isCheckbox = type === 'checkbox';
@@ -58,9 +71,3 @@ function EditorSection({ inputsParameters }) {
 }
 
 export default EditorSection;
-
-// can possibly rename to something like inputList,
-
-// Add a value that can receive html attributes and will attach it to an input
-
-// Can include a title and a handler title
