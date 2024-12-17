@@ -1,5 +1,7 @@
 .education-editor {
   background-color: #88d498;
+
+  display: grid;
 }
 
 .education-editor__section {

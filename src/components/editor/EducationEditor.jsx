@@ -1,8 +1,17 @@
 import 'styles/components/editor/EducationEditor.css';
-import EditorSection from 'components/editor/EditorSection';
+import { useState } from 'react';
+
 import Button from 'components/shared/Button';
+import EditorSection from 'components/editor/EditorSection';
+import EditorToggler from 'components/editor/EditorToggler';
 
 function EducationEditor({ schools, handleChange, handleAdd, handleRemove }) {
+  const [isOpen, setIsOpen] = useState(true);
+
+  function toggleEditor() {
+    setIsOpen(!isOpen);
+  }
+
   const isRemoveButtonAdded = schools.length > 1;
 
   const schoolFieldsets = schools.map((school) => {
@@ -77,11 +86,20 @@ function EducationEditor({ schools, handleChange, handleAdd, handleRemove }) {
 
   return (
     <fieldset className="education-editor">
-      <h2>Education</h2>
-      {schoolFieldsets}
-      <div>
-        <Button handleClick={handleAdd} text="Add" type="add" />
-      </div>
+      <EditorToggler
+        isOpen={isOpen}
+        handleToggle={toggleEditor}
+        title="Education"
+      />
+
+      {isOpen && (
+        <div>
+          {schoolFieldsets}
+          <div>
+            <Button handleClick={handleAdd} text="Add" type="add" />
+          </div>
+        </div>
+      )}
     </fieldset>
   );
 }
