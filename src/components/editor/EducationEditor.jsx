@@ -70,7 +70,7 @@ function EducationEditor({ schools, handleChange, handleAdd, handleRemove }) {
     }
 
     return (
-      <fieldset key={id} className="education-editor__section">
+      <div key={id} className="education-editor__section">
         <EditorSection inputsParameters={inputsParameters} />
         {isRemoveButtonAdded && (
           <div className="education-editor__section__remove">
@@ -81,7 +81,7 @@ function EducationEditor({ schools, handleChange, handleAdd, handleRemove }) {
             />
           </div>
         )}
-      </fieldset>
+      </div>
     );
   });
 

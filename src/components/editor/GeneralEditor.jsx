@@ -54,14 +54,14 @@ function GeneralEditor({ credentials, handleChange }) {
   const editor = <EditorSection inputsParameters={inputsParameters} />;
 
   return (
-    <div className="general-editor">
+    <fieldset className="general-editor">
       <EditorToggler
         isOpen={isOpen}
         handleToggle={toggleEditor}
         title="Personal"
       />
-      {isOpen && <fieldset>{editor}</fieldset>}
-    </div>
+      {isOpen && <div>{editor}</div>}
+    </fieldset>
   );
 }
 

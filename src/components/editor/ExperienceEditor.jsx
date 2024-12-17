@@ -109,7 +109,7 @@ function ExperienceEditor({
     }
 
     return (
-      <fieldset key={id} className="experience-editor__section">
+      <div key={id} className="experience-editor__section">
         <EditorSection inputsParameters={inputsParameters} />
         {isRemoveButtonAdded && (
           <div className="experience-editor__section__remove">
@@ -120,12 +120,12 @@ function ExperienceEditor({
             />
           </div>
         )}
-      </fieldset>
+      </div>
     );
   });
 
   return (
-    <div className="experience-editor">
+    <fieldset className="experience-editor">
       <EditorToggler isOpen={isOpen} handleToggle={toggleEditor} title="Work" />
 
       {isOpen && (
@@ -136,7 +136,7 @@ function ExperienceEditor({
           </div>
         </div>
       )}
-    </div>
+    </fieldset>
   );
 }
 
