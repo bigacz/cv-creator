@@ -113,11 +113,7 @@ function ExperienceEditor({
         <EditorSection inputsParameters={inputsParameters} />
         {isRemoveButtonAdded && (
           <div className="experience-editor__section__remove">
-            <Button
-              handleClick={handleRemoveBinded}
-              text="Remove"
-              type="remove"
-            />
+            <Button handleClick={handleRemoveBinded} type="remove" />
           </div>
         )}
       </div>
@@ -132,7 +128,7 @@ function ExperienceEditor({
         <div>
           {jobFieldsets}
           <div>
-            <Button handleClick={handleAdd} text="Add" type="add" />
+            <Button handleClick={handleAdd} type="add" />
           </div>
         </div>
       )}

@@ -4,10 +4,16 @@ import 'styles/components/shared/Button.css';
  * @param {'regular'|'add'|'remove'} type
  */
 
+const defaultTexts = {
+  regular: 'Button',
+  remove: 'Remove',
+  add: 'Add',
+};
+
 function Button({
   handleClick,
-  text = 'Button',
   type = 'regular',
+  text = defaultTexts[type],
   htmlAttributes,
 }) {
   let buttonClasses = ['button', `button--${type}`];
