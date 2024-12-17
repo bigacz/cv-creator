@@ -42,10 +42,13 @@ function EducationEditor({ schools, handleChange, handleAdd, handleRemove }) {
       },
       {
         name: 'yearEnded',
-        value: yearEnded,
+        value: !isActive ? yearEnded : '',
         type: 'number',
         labelTitle: 'Year ended',
         width: 1,
+        attributes: {
+          disabled: isActive,
+        },
       },
       {
         name: 'isActive',
