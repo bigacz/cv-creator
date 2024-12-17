@@ -34,14 +34,12 @@ function GeneralEditor({ credentials, handleChange }) {
       value: email,
       type: 'email',
       labelTitle: 'E-mail',
-      width: 2,
     },
     {
       name: 'phone',
       value: phone,
       type: 'tel',
       labelTitle: 'Phone number',
-      width: 2,
     },
   ];
 

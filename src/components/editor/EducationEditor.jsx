@@ -24,14 +24,12 @@ function EducationEditor({ schools, handleChange, handleAdd, handleRemove }) {
         value: schoolName,
         type: 'text',
         labelTitle: 'School name',
-        width: 2,
       },
       {
         name: 'studyTitle',
         value: studyTitle,
         type: 'text',
         labelTitle: 'Title of study',
-        width: 2,
       },
       {
         name: 'yearStarted',

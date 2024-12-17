@@ -40,14 +40,12 @@ function ExperienceEditor({
         value: companyName,
         type: 'text',
         labelTitle: 'Company name',
-        width: 2,
       },
       {
         name: 'positionTitle',
         value: positionTitle,
         type: 'text',
         labelTitle: 'Position title',
-        width: 2,
       },
       {
         labelTitle: 'Responsibilities',
