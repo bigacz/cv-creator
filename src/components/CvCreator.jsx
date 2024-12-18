@@ -19,8 +19,8 @@ import {
 
 function CvCreator() {
   const [credentials, setCredentials] = useState({ ...defaultCredentials });
-  const [schools, setSchools] = useState([{ ...defaultSchool }]);
   const [jobs, setJobs] = useState([{ ...defaultJob }]);
+  const [schools, setSchools] = useState([{ ...defaultSchool }]);
 
   const [isPreviewOpen, setIsPreviewOpen] = useState(false);
 
@@ -30,36 +30,6 @@ function CvCreator() {
     const newCredentials = { ...credentials, [name]: value };
 
     setCredentials(newCredentials);
-  }
-
-  function handleSchoolsChange(id, name, value) {
-    const editedSchoolIndex = schools.findIndex((e) => {
-      return e.id == id;
-    });
-
-    const editedSchool = schools[editedSchoolIndex];
-
-    const newSchool = { ...editedSchool, [name]: value };
-    const newSchools = schools.toSpliced(editedSchoolIndex, 1, newSchool);
-
-    setSchools(newSchools);
-  }
-
-  function handleSchoolsAdd() {
-    const highestId = findHighestId(schools);
-
-    const newSchool = { ...defaultSchool, id: highestId + 1 };
-
-    const newSchools = [...schools, newSchool];
-
-    setSchools(newSchools);
-  }
-
-  function handleSchoolsRemove(id) {
-    const schoolIndex = schools.findIndex((element) => element.id === id);
-    const newSchools = schools.toSpliced(schoolIndex, 1);
-
-    setSchools(newSchools);
   }
 
   function handleJobsChange(id, name, value) {
@@ -138,6 +108,36 @@ function CvCreator() {
     const newJobs = jobs.toSpliced(editedJobIndex, 1, newJob);
 
     setJobs(newJobs);
+  }
+
+  function handleSchoolsChange(id, name, value) {
+    const editedSchoolIndex = schools.findIndex((e) => {
+      return e.id == id;
+    });
+
+    const editedSchool = schools[editedSchoolIndex];
+
+    const newSchool = { ...editedSchool, [name]: value };
+    const newSchools = schools.toSpliced(editedSchoolIndex, 1, newSchool);
+
+    setSchools(newSchools);
+  }
+
+  function handleSchoolsAdd() {
+    const highestId = findHighestId(schools);
+
+    const newSchool = { ...defaultSchool, id: highestId + 1 };
+
+    const newSchools = [...schools, newSchool];
+
+    setSchools(newSchools);
+  }
+
+  function handleSchoolsRemove(id) {
+    const schoolIndex = schools.findIndex((element) => element.id === id);
+    const newSchools = schools.toSpliced(schoolIndex, 1);
+
+    setSchools(newSchools);
   }
 
   function handlePreviewOpen() {

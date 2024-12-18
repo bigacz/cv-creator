@@ -1,8 +1,8 @@
 import 'styles/components/editor/Editor.css';
 
-import EducationEditor from 'components/editor/EducationEditor.jsx';
-import ExperienceEditor from 'components/editor/ExperienceEditor.jsx';
 import GeneralEditor from 'components/editor/GeneralEditor.jsx';
+import ExperienceEditor from 'components/editor/ExperienceEditor.jsx';
+import EducationEditor from 'components/editor/EducationEditor.jsx';
 
 import ConfirmModal from 'components/shared/ConfirmModal';
 
@@ -11,10 +11,6 @@ function Editor({ cvData, handlers }) {
   const {
     handleCredentialsChange,
 
-    handleSchoolsChange,
-    handleSchoolsAdd,
-    handleSchoolsRemove,
-
     handleJobsChange,
     handleJobsAdd,
     handleJobsRemove,
@@ -22,6 +18,10 @@ function Editor({ cvData, handlers }) {
     handleDutiesChange,
     handleDutiesAdd,
     handleDutiesRemove,
+
+    handleSchoolsChange,
+    handleSchoolsAdd,
+    handleSchoolsRemove,
 
     handlePreviewOpen,
 
@@ -35,12 +35,6 @@ function Editor({ cvData, handlers }) {
         credentials={credentials}
         handleChange={handleCredentialsChange}
       />
-      <EducationEditor
-        schools={schools}
-        handleChange={handleSchoolsChange}
-        handleAdd={handleSchoolsAdd}
-        handleRemove={handleSchoolsRemove}
-      />
       <ExperienceEditor
         jobs={jobs}
         handleChange={handleJobsChange}
@@ -49,6 +43,12 @@ function Editor({ cvData, handlers }) {
         handleDutiesChange={handleDutiesChange}
         handleDutiesAdd={handleDutiesAdd}
         handleDutiesRemove={handleDutiesRemove}
+      />
+      <EducationEditor
+        schools={schools}
+        handleChange={handleSchoolsChange}
+        handleAdd={handleSchoolsAdd}
+        handleRemove={handleSchoolsRemove}
       />
       <div className="editor__buttons-wrapper">
         <ConfirmModal
