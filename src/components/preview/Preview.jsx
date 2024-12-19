@@ -1,5 +1,7 @@
 import 'styles/components/preview/Preview.css';
 
+import Button from 'components/shared/Button';
+
 import GeneralPreview from 'components/preview/GeneralPreview';
 import ExperiencePreview from 'components/preview/ExperiencePreview';
 import EducationPreview from 'components/preview/EducationPreview';
@@ -12,9 +14,7 @@ function Preview({ cvData, handlePreviewClose }) {
       <GeneralPreview credentials={credentials} />
       <ExperiencePreview jobs={jobs} />
       <EducationPreview schools={schools} />
-      <button type="button" onClick={handlePreviewClose}>
-        Close
-      </button>
+      <Button handleClick={handlePreviewClose} text="Close" />
     </div>
   );
 }
