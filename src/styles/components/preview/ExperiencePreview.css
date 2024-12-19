@@ -1,0 +1,57 @@
+.experience-preview {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3px;
+}
+
+.experience-preview__header {
+  font-size: var(--fs-4);
+}
+
+.experience-preview__line {
+  border-style: none;
+  margin: 0;
+  padding: 0;
+  height: 2px;
+  background-color: black;
+  margin-bottom: 2px;
+}
+
+.experience-preview__jobs {
+  padding: 0 1rem;
+  display: grid;
+  gap: 5px;
+}
+
+.experience-preview__jobs__section {
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  grid-template-areas:
+    'company date'
+    'position position'
+    'duties duties';
+}
+
+.experience-preview__jobs__section__company {
+  grid-area: company;
+
+  font-weight: bold;
+}
+
+.experience-preview__jobs__section__position {
+  grid-area: position;
+
+  font-style: italic;
+}
+
+.experience-preview__jobs__section__duties {
+  padding: 0 0 0 1rem;
+  margin: 0;
+  grid-area: duties;
+  display: grid;
+  gap: 1px;
+}
+
+.experience-preview__jobs__section__date {
+  grid-area: date;
+}
