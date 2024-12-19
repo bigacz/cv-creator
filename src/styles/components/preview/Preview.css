@@ -1,0 +1,14 @@
+.preview {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: minmax(min-content, 800px);
+}
+
+.preview__wrapper {
+  padding: var(--fs-4);
+  background-color: #f0efeb;
+  color: black;
+
+  display: grid;
+  gap: 1rem;
+}
