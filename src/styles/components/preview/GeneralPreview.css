@@ -1,0 +1,13 @@
+.general-preview {
+  display: grid;
+  justify-items: center;
+}
+
+.general-preview__fullname {
+  font-size: var(--fs-6);
+  font-weight: bold;
+}
+
+.general-preview__contact {
+  font-size: var(--fs-3);
+}

@@ -4,13 +4,13 @@ function GeneralPreview({ credentials }) {
   const { first, last, email, phone } = credentials;
 
   return (
-    <div>
-      <p>
+    <div className="general-preview">
+      <div className="general-preview__fullname">
         {first} {last}
-      </p>
-      <p>
-        {email} {phone}
-      </p>
+      </div>
+      <div className="general-preview__contact">
+        {email} | {phone}
+      </div>
     </div>
   );
 }
