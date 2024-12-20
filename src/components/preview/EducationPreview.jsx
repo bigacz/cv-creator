@@ -5,18 +5,26 @@ function EducationPreview({ schools }) {
     const { id, schoolName, studyTitle, yearStarted, yearEnded, isActive } =
       school;
 
+    const sectionPrefix = 'education-preview__schools__section__';
+
     return (
-      <div key={id}>
-        <p>{schoolName}</p>
-        <p>{studyTitle}</p>
-        <p>{yearStarted}</p>
-        <p>{yearEnded}</p>
-        <p>{isActive}</p>
+      <div key={id} className="education-preview__schools__section">
+        <div className={`${sectionPrefix}school`}>{schoolName}</div>
+        <div className={`${sectionPrefix}title`}>{studyTitle}</div>
+        <div className={`${sectionPrefix}date`}>
+          {yearStarted} - {isActive ? 'Present' : yearEnded}
+        </div>
       </div>
     );
   });
 
-  return <div>{schoolSections}</div>;
+  return (
+    <div className="education-preview">
+      <div className="education-preview__header">Experience</div>
+      <hr className="education-preview__line" />
+      <div className="education-preview__schools">{schoolSections}</div>
+    </div>
+  );
 }
 
 export default EducationPreview;

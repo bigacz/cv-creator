@@ -1,0 +1,48 @@
+.education-preview {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3px;
+}
+
+.education-preview__header {
+  font-size: var(--fs-4);
+}
+
+.education-preview__line {
+  border-style: none;
+  margin: 0;
+  padding: 0;
+  height: 2px;
+  background-color: black;
+  margin-bottom: 2px;
+}
+
+.education-preview__schools {
+  padding: 0 1rem;
+  display: grid;
+  gap: 5px;
+}
+
+.education-preview__schools__section {
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  grid-template-areas:
+    'school date'
+    'title title';
+}
+
+.education-preview__schools__section__school {
+  grid-area: school;
+
+  font-weight: bold;
+}
+
+.education-preview__schools__section__title {
+  grid-area: title;
+
+  font-style: italic;
+}
+
+.education-preview__schools__section__date {
+  grid-area: date;
+}
