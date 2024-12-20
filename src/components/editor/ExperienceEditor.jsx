@@ -1,5 +1,4 @@
 import 'styles/components/editor/ExperienceEditor.css';
-import { useState } from 'react';
 
 import FlexInputList from 'components/editor/FlexInputList';
 import Button from 'components/shared/Button';
@@ -14,13 +13,10 @@ function ExperienceEditor({
   handleDutiesChange,
   handleDutiesAdd,
   handleDutiesRemove,
+
+  handleToggle,
+  isOpen,
 }) {
-  const [isOpen, setIsOpen] = useState(true);
-
-  function toggleEditor() {
-    setIsOpen(!isOpen);
-  }
-
   const isRemoveButtonAdded = jobs.length > 1;
 
   const jobFieldsets = jobs.map((job) => {
@@ -122,7 +118,7 @@ function ExperienceEditor({
 
   return (
     <fieldset className="experience-editor">
-      <EditorToggler isOpen={isOpen} handleToggle={toggleEditor} title="Work" />
+      <EditorToggler isOpen={isOpen} handleToggle={handleToggle} title="Work" />
 
       {isOpen && (
         <div>

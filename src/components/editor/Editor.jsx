@@ -6,7 +6,8 @@ import EducationEditor from 'components/editor/EducationEditor.jsx';
 
 import ConfirmModal from 'components/shared/ConfirmModal';
 
-function Editor({ cvData, handlers }) {
+function Editor({ cvData, handlers, areEditorsOpen }) {
+  const { isGeneralOpen, isExperienceOpen, isEducationOpen } = areEditorsOpen;
   const { credentials, schools, jobs } = cvData;
   const {
     handleCredentialsChange,
@@ -27,6 +28,10 @@ function Editor({ cvData, handlers }) {
 
     handleEditorClean,
     handleEditorFill,
+
+    handleGeneralToggle,
+    handleExperienceToggle,
+    handleEducationToggle,
   } = handlers;
 
   return (
@@ -34,6 +39,8 @@ function Editor({ cvData, handlers }) {
       <GeneralEditor
         credentials={credentials}
         handleChange={handleCredentialsChange}
+        handleToggle={handleGeneralToggle}
+        isOpen={isGeneralOpen}
       />
       <ExperienceEditor
         jobs={jobs}
@@ -43,12 +50,16 @@ function Editor({ cvData, handlers }) {
         handleDutiesChange={handleDutiesChange}
         handleDutiesAdd={handleDutiesAdd}
         handleDutiesRemove={handleDutiesRemove}
+        handleToggle={handleExperienceToggle}
+        isOpen={isExperienceOpen}
       />
       <EducationEditor
         schools={schools}
         handleChange={handleSchoolsChange}
         handleAdd={handleSchoolsAdd}
         handleRemove={handleSchoolsRemove}
+        handleToggle={handleEducationToggle}
+        isOpen={isEducationOpen}
       />
       <div className="editor__buttons-wrapper">
         <ConfirmModal

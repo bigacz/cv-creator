@@ -1,18 +1,10 @@
-import { useState } from 'react';
-
 import EditorToggler from 'components/editor/EditorToggler';
 import EditorSection from 'components/editor/EditorSection';
 
 import 'styles/components/editor/GeneralEditor.css';
 
-function GeneralEditor({ credentials, handleChange }) {
+function GeneralEditor({ credentials, handleChange, handleToggle, isOpen }) {
   const { first, last, email, phone } = credentials;
-
-  const [isOpen, setIsOpen] = useState(true);
-
-  function toggleEditor() {
-    setIsOpen(!isOpen);
-  }
 
   const inputsParameters = [
     {
@@ -57,7 +49,7 @@ function GeneralEditor({ credentials, handleChange }) {
     <fieldset className="general-editor">
       <EditorToggler
         isOpen={isOpen}
-        handleToggle={toggleEditor}
+        handleToggle={handleToggle}
         title="Personal"
       />
       {isOpen && <div>{editor}</div>}

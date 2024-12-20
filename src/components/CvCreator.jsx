@@ -22,9 +22,27 @@ function CvCreator() {
   const [jobs, setJobs] = useState([{ ...defaultJob }]);
   const [schools, setSchools] = useState([{ ...defaultSchool }]);
 
+  const [isGeneralOpen, setIsGeneralOpen] = useState(true);
+  const [isExperienceOpen, setIsExperienceOpen] = useState(true);
+  const [isEducationOpen, setIsEducationOpen] = useState(true);
+
   const [isPreviewOpen, setIsPreviewOpen] = useState(false);
 
   const cvData = { credentials, schools, jobs };
+
+  const areEditorsOpen = { isGeneralOpen, isExperienceOpen, isEducationOpen };
+
+  function handleGeneralToggle() {
+    setIsGeneralOpen(!isGeneralOpen);
+  }
+
+  function handleExperienceToggle() {
+    setIsExperienceOpen(!isExperienceOpen);
+  }
+
+  function handleEducationToggle() {
+    setIsEducationOpen(!isEducationOpen);
+  }
 
   function handleCredentialsChange(name, value) {
     const newCredentials = { ...credentials, [name]: value };
@@ -179,6 +197,10 @@ function CvCreator() {
 
     handleEditorClean,
     handleEditorFill,
+
+    handleGeneralToggle,
+    handleExperienceToggle,
+    handleEducationToggle,
   };
 
   let rendered;
@@ -187,7 +209,13 @@ function CvCreator() {
       <Preview cvData={cvData} handlePreviewClose={handlePreviewClose} />
     );
   } else {
-    rendered = <Editor cvData={cvData} handlers={editorHandlers} />;
+    rendered = (
+      <Editor
+        cvData={cvData}
+        handlers={editorHandlers}
+        areEditorsOpen={areEditorsOpen}
+      />
+    );
   }
 
   return <div className="cv-creator">{rendered}</div>;
