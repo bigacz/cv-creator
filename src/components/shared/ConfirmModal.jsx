@@ -1,5 +1,6 @@
 import 'styles/components/shared/ConfirmModal.css';
 
+import Button from 'components/shared/Button';
 import { useState } from 'react';
 
 function ConfirmModal({
@@ -23,10 +24,10 @@ function ConfirmModal({
     close();
   }
 
-  const resultParagraph = resultText != null && <p>{resultText}</p>;
+  const resultParagraph = resultText && <p>{resultText}</p>;
 
   const modal = (
-    <div>
+    <dialog open={isOpen} className="confirm-modal__wrapper__modal">
       <h3>{questionText}</h3>
       {resultParagraph}
       <button type="button" onClick={close}>
@@ -35,16 +36,17 @@ function ConfirmModal({
       <button type="button" onClick={handleConfirmClick}>
         {buttonText}
       </button>
+    </dialog>
+  );
+
+  const button = <Button handleClick={open} text={buttonText} />;
+
+  return (
+    <div className="confirm-modal__wrapper">
+      {button}
+      {modal}
     </div>
   );
-
-  const button = (
-    <button className="button" onClick={open}>
-      {buttonText}
-    </button>
-  );
-
-  return isOpen ? modal : button;
 }
 
 export default ConfirmModal;
