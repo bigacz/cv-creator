@@ -27,16 +27,18 @@ function ConfirmModal({
   const resultParagraph = resultText && <p>{resultText}</p>;
 
   const modal = (
-    <dialog open={isOpen} className="confirm-modal__wrapper__modal">
-      <h3>{questionText}</h3>
-      {resultParagraph}
-      <button type="button" onClick={close}>
-        Cancel
-      </button>
-      <button type="button" onClick={handleConfirmClick}>
-        {buttonText}
-      </button>
-    </dialog>
+    <div className="confirm-modal__wrapper__modal-wrapper">
+      <div className="confirm-modal__wrapper__modal-wrapper__modal">
+        <h3>{questionText}</h3>
+        {resultParagraph}
+        <button type="button" onClick={close}>
+          Cancel
+        </button>
+        <button type="button" onClick={handleConfirmClick}>
+          {buttonText}
+        </button>
+      </div>
+    </div>
   );
 
   const button = <Button handleClick={open} text={buttonText} />;
@@ -44,7 +46,7 @@ function ConfirmModal({
   return (
     <div className="confirm-modal__wrapper">
       {button}
-      {modal}
+      {isOpen && modal}
     </div>
   );
 }

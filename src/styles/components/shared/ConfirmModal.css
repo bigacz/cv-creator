@@ -1,17 +1,20 @@
-.confirm-modal__wrapper__modal {
+.confirm-modal__wrapper__modal-wrapper {
+  background-color: rgba(255, 255, 255, 0.397);
+
   position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
 
-  top: 50vh;
-  left: 50vw;
-  transform: translate(-50%, -150%);
+  display: grid;
+  place-items: center;
+}
 
+.confirm-modal__wrapper__modal-wrapper__modal {
   margin: 0;
   border: 0;
   padding: 1rem;
-}
-
-.confirm-modal__wrapper__modal::backdrop {
-  height: 100vh;
-  width: 100vw;
-  background-color: yellow;
+  background-color: orange;
+  transform: translateY(-75%);
 }
