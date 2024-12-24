@@ -14,9 +14,10 @@ function Button({
   handleClick,
   type = 'regular',
   text = defaultTexts[type],
+  className = '',
   htmlAttributes,
 }) {
-  let buttonClasses = ['button', `button--${type}`];
+  let buttonClasses = ['button', `button--${type}`, className];
 
   buttonClasses = buttonClasses.join(' ');
 

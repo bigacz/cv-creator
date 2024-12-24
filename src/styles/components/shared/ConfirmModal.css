@@ -17,4 +17,32 @@
   padding: 1rem;
   background-color: orange;
   transform: translateY(-75%);
+
+  display: grid;
+  grid-template-areas:
+    'header header'
+    'result result'
+    'cancel accept';
+  gap: 1.5rem;
+  grid-template-columns: 1fr 1fr;
+}
+
+.confirm-modal__wrapper__modal-wrapper__modal__header {
+  font-size: var(--fs-5);
+  font-weight: bold;
+  grid-area: header;
+  text-align: center;
+}
+
+.confirm-modal__wrapper__modal-wrapper__modal__result {
+  font-size: var(--fs-3);
+  grid-area: result;
+}
+
+.confirm-modal__wrapper__modal-wrapper__modal__cancel {
+  grid-area: cancel;
+}
+
+.confirm-modal__wrapper__modal-wrapper__modal__accept {
+  grid-area: accept;
 }

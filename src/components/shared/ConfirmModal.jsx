@@ -24,19 +24,27 @@ function ConfirmModal({
     close();
   }
 
-  const resultParagraph = resultText && <p>{resultText}</p>;
+  const modalPrefix = 'confirm-modal__wrapper__modal-wrapper__modal';
+
+  const resultNode = resultText && (
+    <div className={`${modalPrefix}__result`}>{resultText}</div>
+  );
 
   const modal = (
     <div className="confirm-modal__wrapper__modal-wrapper">
-      <div className="confirm-modal__wrapper__modal-wrapper__modal">
-        <h3>{questionText}</h3>
-        {resultParagraph}
-        <button type="button" onClick={close}>
-          Cancel
-        </button>
-        <button type="button" onClick={handleConfirmClick}>
-          {buttonText}
-        </button>
+      <div className={modalPrefix}>
+        <div className={`${modalPrefix}__header`}>{questionText}</div>
+        {resultNode}
+        <Button
+          text="Cancel"
+          handleClick={close}
+          className={`${modalPrefix}__cancel`}
+        />
+        <Button
+          text={buttonText}
+          handleClick={handleConfirmClick}
+          className={`${modalPrefix}__accept`}
+        />
       </div>
     </div>
   );
