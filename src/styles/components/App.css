@@ -1,0 +1,5 @@
+.app {
+  min-height: 100dvh;
+  display: grid;
+  grid-template-rows: max-content 1fr minmax(9rem, max-content);
+}
