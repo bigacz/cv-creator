@@ -1,0 +1,13 @@
+.footer {
+  padding: 2rem 0;
+  display: grid;
+  grid-template-columns: minmax(max-content, 800px);
+  justify-content: center;
+  justify-items: center;
+  align-items: end;
+}
+
+.footer__link-github {
+  height: 2.2rem;
+  width: 2.2rem;
+}

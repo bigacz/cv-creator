@@ -1,3 +1,4 @@
 import 'normalize.css';
-import 'src/styles/general.css';
-import 'src/styles/header.css';
+import 'styles/general.css';
+import 'styles/header.css';
+import 'styles/footer.css';
