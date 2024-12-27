@@ -44,9 +44,7 @@ function EducationEditor({
         type: 'number',
         labelTitle: 'Year ended',
         width: 1,
-        attributes: {
-          disabled: isActive,
-        },
+        disabled: isActive,
       },
       {
         name: 'isActive',

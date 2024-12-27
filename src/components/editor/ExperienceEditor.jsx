@@ -36,6 +36,8 @@ function ExperienceEditor({
         value: companyName,
         type: 'text',
         labelTitle: 'Company name',
+        required: true,
+        maxLength: 18,
       },
       {
         name: 'positionTitle',
@@ -67,9 +69,7 @@ function ExperienceEditor({
         type: 'number',
         labelTitle: 'Year ended',
         width: 1,
-        attributes: {
-          disabled: isActive,
-        },
+        disabled: isActive,
       },
       {
         name: 'isActive',

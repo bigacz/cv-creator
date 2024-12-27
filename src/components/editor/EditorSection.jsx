@@ -11,8 +11,8 @@ function EditorSection({ inputsParameters }) {
       labelTitle,
       type,
       handleChange,
-      attributes,
       element,
+      ...attributes
     } = inputData;
 
     let labelClasses = [
