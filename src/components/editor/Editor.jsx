@@ -42,6 +42,7 @@ function Editor({ cvData, handlers, areEditorsOpen }) {
         handleToggle={handleGeneralToggle}
         isOpen={isGeneralOpen}
       />
+
       <ExperienceEditor
         jobs={jobs}
         handleChange={handleJobsChange}
@@ -75,7 +76,7 @@ function Editor({ cvData, handlers, areEditorsOpen }) {
           resultText="This will remove all your current input."
         />
         <button className="button" type="button" onClick={handlePreviewOpen}>
-          Open preview
+          Generate
         </button>
       </div>
     </div>

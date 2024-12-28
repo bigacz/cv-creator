@@ -1,5 +1,8 @@
 import 'styles/components/editor/ExperienceEditor.css';
 
+import { experienceAttributes } from 'src/data/inputsAttributes';
+import { mergeInputsAttributes } from 'src/utilities';
+
 import FlexInputList from 'components/editor/FlexInputList';
 import Button from 'components/shared/Button';
 import EditorSection from 'components/editor/EditorSection';
@@ -20,73 +23,11 @@ function ExperienceEditor({
   const isRemoveButtonAdded = jobs.length > 1;
 
   const jobFieldsets = jobs.map((job) => {
-    const {
-      id,
-      companyName,
-      positionTitle,
-      duties,
-      yearStarted,
-      yearEnded,
-      isActive,
-    } = job;
+    const { id, duties } = job;
 
-    const inputsParameters = [
-      {
-        name: 'companyName',
-        value: companyName,
-        type: 'text',
-        labelTitle: 'Company name',
-        required: true,
-        maxLength: 18,
-      },
-      {
-        name: 'positionTitle',
-        value: positionTitle,
-        type: 'text',
-        labelTitle: 'Position title',
-      },
-      {
-        labelTitle: 'Responsibilities',
-        element: (
-          <FlexInputList
-            entries={duties}
-            handleChange={handleDutiesChangeBinded}
-            handleAdd={handleDutiesAddBinded}
-            handleRemove={handleDutiesRemoveBinded}
-          />
-        ),
-      },
-      {
-        name: 'yearStarted',
-        value: yearStarted,
-        type: 'number',
-        labelTitle: 'Year started',
-        width: 1,
-      },
-      {
-        name: 'yearEnded',
-        value: !isActive ? yearEnded : '',
-        type: 'number',
-        labelTitle: 'Year ended',
-        width: 1,
-        disabled: isActive,
-      },
-      {
-        name: 'isActive',
-        value: isActive,
-        type: 'checkbox',
-        labelTitle: 'Current',
-        column: 2,
-      },
-    ];
-
-    inputsParameters.forEach((input) => {
-      const name = input.name;
-
-      input.handleChange = function (value) {
-        handleChange(id, name, value);
-      };
-    });
+    const handleChangeBinded = function (name, value) {
+      handleChange(id, name, value);
+    };
 
     function handleDutiesChangeBinded(dutyId, value) {
       handleDutiesChange(id, dutyId, value);
@@ -104,9 +45,24 @@ function ExperienceEditor({
       handleRemove(id);
     }
 
+    const inputsAttributes = mergeInputsAttributes(
+      experienceAttributes,
+      job,
+      handleChangeBinded
+    );
+
+    inputsAttributes.responsibilities.element = (
+      <FlexInputList
+        entries={duties}
+        handleChange={handleDutiesChangeBinded}
+        handleAdd={handleDutiesAddBinded}
+        handleRemove={handleDutiesRemoveBinded}
+      />
+    );
+
     return (
       <div key={id} className="experience-editor__section">
-        <EditorSection inputsParameters={inputsParameters} />
+        <EditorSection inputsAttributes={inputsAttributes} />
         {isRemoveButtonAdded && (
           <div className="experience-editor__section__remove">
             <Button handleClick={handleRemoveBinded} type="remove" />

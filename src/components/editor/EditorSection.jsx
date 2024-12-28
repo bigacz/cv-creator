@@ -1,8 +1,10 @@
 import { isValidElement } from 'react';
 import 'styles/components/editor/EditorSection.css';
 
-function EditorSection({ inputsParameters }) {
-  const labeledInputs = inputsParameters.map((inputData) => {
+function EditorSection({ inputsAttributes }) {
+  const attributesArray = Object.values(inputsAttributes);
+
+  const labeledInputs = attributesArray.map((inputData) => {
     const {
       name,
       value,
@@ -32,11 +34,12 @@ function EditorSection({ inputsParameters }) {
       );
     }
 
-    let inputAttributes = {};
+    let finalAttributes = { required: true };
     const isCheckbox = type === 'checkbox';
 
     if (isCheckbox) {
-      inputAttributes = {
+      finalAttributes = {
+        ...finalAttributes,
         ...attributes,
         checked: value,
         onChange: (event) => {
@@ -46,7 +49,8 @@ function EditorSection({ inputsParameters }) {
 
       labelClasses.push('editor-section__label--checkbox');
     } else {
-      inputAttributes = {
+      finalAttributes = {
+        ...finalAttributes,
         ...attributes,
         value: value,
         onChange: (event) => {
@@ -62,7 +66,7 @@ function EditorSection({ inputsParameters }) {
     return (
       <label key={labelTitle} className={labelClasses}>
         <span>{labelTitle}:</span>
-        <input type={type} name={name} {...inputAttributes} />
+        <input type={type} name={name} {...finalAttributes} />
       </label>
     );
   });
