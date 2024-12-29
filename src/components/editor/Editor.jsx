@@ -34,8 +34,13 @@ function Editor({ cvData, handlers, areEditorsOpen }) {
     handleEducationToggle,
   } = handlers;
 
+  function handleFormSubmit(event) {
+    event.preventDefault();
+    handlePreviewOpen();
+  }
+
   return (
-    <div className="editor">
+    <form className="editor" onSubmit={handleFormSubmit}>
       <GeneralEditor
         credentials={credentials}
         handleChange={handleCredentialsChange}
@@ -75,11 +80,11 @@ function Editor({ cvData, handlers, areEditorsOpen }) {
           questionText="Fill the editor?"
           resultText="This will remove all your current input."
         />
-        <button className="button" type="button" onClick={handlePreviewOpen}>
+        <button className="button" type="submit">
           Generate
         </button>
       </div>
-    </div>
+    </form>
   );
 }
 

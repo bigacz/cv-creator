@@ -23,7 +23,7 @@ function ExperienceEditor({
   const isRemoveButtonAdded = jobs.length > 1;
 
   const jobFieldsets = jobs.map((job) => {
-    const { id, duties } = job;
+    const { id, duties, isActive } = job;
 
     const handleChangeBinded = function (name, value) {
       handleChange(id, name, value);
@@ -59,6 +59,12 @@ function ExperienceEditor({
         handleRemove={handleDutiesRemoveBinded}
       />
     );
+
+    if (isActive) {
+      inputsAttributes.yearEnded.required = false;
+      inputsAttributes.yearEnded.disabled = true;
+      inputsAttributes.yearEnded.value = '';
+    }
 
     return (
       <div key={id} className="experience-editor__section">

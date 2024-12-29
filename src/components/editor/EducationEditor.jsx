@@ -18,7 +18,7 @@ function EducationEditor({
   const isRemoveButtonAdded = schools.length > 1;
 
   const schoolFieldsets = schools.map((school) => {
-    const id = school.id;
+    const { id, isActive } = school;
 
     function handleRemoveBinded() {
       handleRemove(id);
@@ -33,6 +33,12 @@ function EducationEditor({
       school,
       handleChangeBinded
     );
+
+    if (isActive) {
+      inputsAttributes.yearEnded.required = false;
+      inputsAttributes.yearEnded.disabled = true;
+      inputsAttributes.yearEnded.value = '';
+    }
 
     return (
       <div key={id} className="education-editor__section">

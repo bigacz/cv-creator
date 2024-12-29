@@ -8,7 +8,11 @@ function EditorToggler({ isOpen, handleToggle, title }) {
     : 'editor-toggler--closed';
 
   return (
-    <button className={`editor-toggler ${buttonClass}`} onClick={handleToggle}>
+    <button
+      className={`editor-toggler ${buttonClass}`}
+      onClick={handleToggle}
+      type="button"
+    >
       <h2>{title}</h2>
       <img
         className="editor-toggler__arrow"

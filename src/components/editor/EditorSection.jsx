@@ -14,6 +14,7 @@ function EditorSection({ inputsAttributes }) {
       type,
       handleChange,
       element,
+      required = true,
       ...attributes
     } = inputData;
 
@@ -34,7 +35,7 @@ function EditorSection({ inputsAttributes }) {
       );
     }
 
-    let finalAttributes = { required: true };
+    let finalAttributes = {};
     const isCheckbox = type === 'checkbox';
 
     if (isCheckbox) {
@@ -52,6 +53,7 @@ function EditorSection({ inputsAttributes }) {
       finalAttributes = {
         ...finalAttributes,
         ...attributes,
+        required: required,
         value: value,
         onChange: (event) => {
           handleChange(event.currentTarget.value);
