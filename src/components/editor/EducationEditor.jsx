@@ -1,7 +1,7 @@
 import 'styles/components/editor/EducationEditor.css';
 
 import { educationAttributes } from 'src/data/inputsAttributes';
-import { mergeInputsAttributes } from 'src/utilities';
+import { isYearWithinRange, mergeInputsAttributes } from 'src/utilities';
 
 import Button from 'components/shared/Button';
 import EditorSection from 'components/editor/EditorSection';
@@ -18,7 +18,7 @@ function EducationEditor({
   const isRemoveButtonAdded = schools.length > 1;
 
   const schoolFieldsets = schools.map((school) => {
-    const { id, isActive } = school;
+    const { id, isActive, yearStarted } = school;
 
     function handleRemoveBinded() {
       handleRemove(id);
@@ -38,6 +38,10 @@ function EducationEditor({
       inputsAttributes.yearEnded.required = false;
       inputsAttributes.yearEnded.disabled = true;
       inputsAttributes.yearEnded.value = '';
+    }
+
+    if (isYearWithinRange(yearStarted)) {
+      inputsAttributes.yearEnded.min = yearStarted;
     }
 
     return (

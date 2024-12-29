@@ -1,7 +1,7 @@
 import 'styles/components/editor/ExperienceEditor.css';
 
 import { experienceAttributes } from 'src/data/inputsAttributes';
-import { mergeInputsAttributes } from 'src/utilities';
+import { isYearWithinRange, mergeInputsAttributes } from 'src/utilities';
 
 import FlexInputList from 'components/editor/FlexInputList';
 import Button from 'components/shared/Button';
@@ -23,7 +23,7 @@ function ExperienceEditor({
   const isRemoveButtonAdded = jobs.length > 1;
 
   const jobFieldsets = jobs.map((job) => {
-    const { id, duties, isActive } = job;
+    const { id, duties, isActive, yearStarted } = job;
 
     const handleChangeBinded = function (name, value) {
       handleChange(id, name, value);
@@ -64,6 +64,10 @@ function ExperienceEditor({
       inputsAttributes.yearEnded.required = false;
       inputsAttributes.yearEnded.disabled = true;
       inputsAttributes.yearEnded.value = '';
+    }
+
+    if (isYearWithinRange(yearStarted)) {
+      inputsAttributes.yearEnded.min = yearStarted;
     }
 
     return (

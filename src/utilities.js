@@ -14,4 +14,11 @@ function mergeInputsAttributes(inputs, values, handleChange) {
   return inputsCopy;
 }
 
-export { mergeInputsAttributes };
+function isYearWithinRange(year) {
+  const currentDate = new Date();
+  const currentYear = currentDate.getFullYear();
+
+  return year <= currentYear && year >= currentYear - 100;
+}
+
+export { mergeInputsAttributes, isYearWithinRange };
