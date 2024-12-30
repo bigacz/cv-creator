@@ -1,6 +1,12 @@
 import 'styles/components/editor/FlexInputList.css';
 
-function FlexInputList({ entries, handleChange, handleAdd, handleRemove }) {
+function FlexInputList({
+  entries,
+  handleChange,
+  handleAdd,
+  handleRemove,
+  ...attributes
+}) {
   const isRemoveButtonAdded = entries.length > 1;
 
   const listItems = entries.map((entry) => {
@@ -9,11 +15,13 @@ function FlexInputList({ entries, handleChange, handleAdd, handleRemove }) {
     return (
       <li key={id}>
         <input
+          {...attributes}
           type="text"
           value={value}
           onChange={(event) => {
             handleChange(id, event.target.value);
           }}
+          required
         />
         {isRemoveButtonAdded && (
           <button

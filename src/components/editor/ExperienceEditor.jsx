@@ -57,6 +57,8 @@ function ExperienceEditor({
         handleChange={handleDutiesChangeBinded}
         handleAdd={handleDutiesAddBinded}
         handleRemove={handleDutiesRemoveBinded}
+        minLength="2"
+        maxLength="250"
       />
     );
 
