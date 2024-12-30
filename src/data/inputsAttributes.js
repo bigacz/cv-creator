@@ -116,6 +116,18 @@ const educationAttributes = {
   },
 };
 
+Object.values(generalAttributes).forEach((element) => {
+  element['data-editor'] = 'general';
+});
+
+Object.values(experienceAttributes).forEach((element) => {
+  element['data-editor'] = 'experience';
+});
+
+Object.values(educationAttributes).forEach((element) => {
+  element['data-editor'] = 'education';
+});
+
 Object.freeze(generalAttributes);
 Object.freeze(experienceAttributes);
 Object.freeze(educationAttributes);

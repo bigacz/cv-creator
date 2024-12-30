@@ -1,5 +1,7 @@
 import 'styles/components/editor/Editor.css';
 
+import { useRef } from 'react';
+
 import GeneralEditor from 'components/editor/GeneralEditor.jsx';
 import ExperienceEditor from 'components/editor/ExperienceEditor.jsx';
 import EducationEditor from 'components/editor/EducationEditor.jsx';
@@ -33,14 +35,44 @@ function Editor({ cvData, handlers, areEditorsOpen }) {
     handleExperienceToggle,
     handleEducationToggle,
   } = handlers;
+  const formRef = useRef(null);
 
-  function handleFormSubmit(event) {
+  function handleSubmitRequest(event) {
     event.preventDefault();
-    handlePreviewOpen();
+    const form = formRef.current;
+
+    const firstElement = [...form.elements].filter(
+      (element) => !element.checkValidity()
+    )[0];
+
+    if (firstElement != null) {
+      if (isHidden(firstElement)) {
+        const editor = firstElement.getAttribute('data-editor');
+        switch (editor) {
+          case 'general':
+            handleGeneralToggle();
+            break;
+
+          case 'experience':
+            handleExperienceToggle();
+            break;
+
+          case 'education':
+            handleEducationToggle();
+            break;
+        }
+      }
+
+      setTimeout(() => {
+        firstElement.reportValidity();
+      }, 0);
+    } else {
+      handlePreviewOpen();
+    }
   }
 
   return (
-    <form className="editor" onSubmit={handleFormSubmit}>
+    <form className="editor" ref={formRef}>
       <GeneralEditor
         credentials={credentials}
         handleChange={handleCredentialsChange}
@@ -80,7 +112,7 @@ function Editor({ cvData, handlers, areEditorsOpen }) {
           questionText="Fill the editor?"
           resultText="This will remove all your current input."
         />
-        <button className="button" type="submit">
+        <button className="button" type="submit" onClick={handleSubmitRequest}>
           Generate
         </button>
       </div>
@@ -89,3 +121,7 @@ function Editor({ cvData, handlers, areEditorsOpen }) {
 }
 
 export default Editor;
+
+function isHidden(element) {
+  return element.offsetParent === null;
+}
