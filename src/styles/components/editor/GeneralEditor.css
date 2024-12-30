@@ -3,3 +3,7 @@
 
   display: grid;
 }
+
+.general-editor__editor--hidden {
+  display: none;
+}

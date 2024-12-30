@@ -22,7 +22,9 @@ function GeneralEditor({ credentials, handleChange, handleToggle, isOpen }) {
         handleToggle={handleToggle}
         title="Personal"
       />
-      {isOpen && <div>{editor}</div>}
+      <div className={!isOpen ? 'general-editor__editor--hidden' : ''}>
+        {editor}
+      </div>
     </fieldset>
   );
 }

@@ -3,11 +3,15 @@
   display: grid;
 }
 
-.experience-editor__section {
+.experience-editor__wrapper--hidden {
+  display: none;
+}
+
+.experience-editor__wrapper__section {
   display: grid;
   grid-template-columns: 1fr;
 }
 
-.experience-editor__section__remove {
+.experience-editor__wrapper__section__remove {
   justify-self: center;
 }

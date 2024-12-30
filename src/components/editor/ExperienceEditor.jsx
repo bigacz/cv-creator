@@ -73,10 +73,10 @@ function ExperienceEditor({
     }
 
     return (
-      <div key={id} className="experience-editor__section">
+      <div key={id} className="experience-editor__wrapper__section">
         <EditorSection inputsAttributes={inputsAttributes} />
         {isRemoveButtonAdded && (
-          <div className="experience-editor__section__remove">
+          <div className="experience-editor__wrapper__section__remove">
             <Button handleClick={handleRemoveBinded} type="remove" />
           </div>
         )}
@@ -84,18 +84,23 @@ function ExperienceEditor({
     );
   });
 
+  const wrapperClasses = [
+    'experience-editor__wrapper',
+    !isOpen ? 'experience-editor__wrapper--hidden' : undefined,
+  ]
+    .join(' ')
+    .trimEnd();
+
   return (
     <fieldset className="experience-editor">
       <EditorToggler isOpen={isOpen} handleToggle={handleToggle} title="Work" />
 
-      {isOpen && (
+      <div className={wrapperClasses}>
+        {jobFieldsets}
         <div>
-          {jobFieldsets}
-          <div>
-            <Button handleClick={handleAdd} type="add" />
-          </div>
+          <Button handleClick={handleAdd} type="add" />
         </div>
-      )}
+      </div>
     </fieldset>
   );
 }

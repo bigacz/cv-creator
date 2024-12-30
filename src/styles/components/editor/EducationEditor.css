@@ -4,11 +4,15 @@
   display: grid;
 }
 
-.education-editor__section {
+.education-editor__wrapper--hidden {
+  display: none;
+}
+
+.education-editor__wrapper__section {
   display: grid;
   grid-template-columns: 1fr;
 }
 
-.education-editor__section__remove {
+.education-editor__wrapper__section__remove {
   justify-self: center;
 }

@@ -45,16 +45,23 @@ function EducationEditor({
     }
 
     return (
-      <div key={id} className="education-editor__section">
+      <div key={id} className="education-editor__wrapper__section">
         <EditorSection inputsAttributes={inputsAttributes} />
         {isRemoveButtonAdded && (
-          <div className="education-editor__section__remove">
+          <div className="education-editor__wrapper__section__remove">
             <Button handleClick={handleRemoveBinded} type="remove" />
           </div>
         )}
       </div>
     );
   });
+
+  const wrapperClasses = [
+    'education-editor__wrapper',
+    !isOpen ? 'education-editor__wrapper--hidden' : undefined,
+  ]
+    .join(' ')
+    .trimEnd();
 
   return (
     <fieldset className="education-editor">
@@ -64,14 +71,12 @@ function EducationEditor({
         title="Education"
       />
 
-      {isOpen && (
+      <div className={wrapperClasses}>
+        {schoolFieldsets}
         <div>
-          {schoolFieldsets}
-          <div>
-            <Button handleClick={handleAdd} type="add" />
-          </div>
+          <Button handleClick={handleAdd} type="add" />
         </div>
-      )}
+      </div>
     </fieldset>
   );
 }
