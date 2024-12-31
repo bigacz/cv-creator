@@ -3,9 +3,22 @@
   justify-content: center;
   grid-template-columns: minmax(min-content, 800px);
   gap: 1rem;
+  grid-template-areas:
+    'general buttons'
+    'experience buttons'
+    'education buttons';
+  position: relative;
+  align-items: start;
 }
 
 .editor__buttons-wrapper {
-  display: flex;
-  justify-content: space-evenly;
+  grid-area: buttons;
+  display: grid;
+  align-content: start;
+
+  grid-template-columns: 1fr;
+  gap: 1rem;
+
+  position: sticky;
+  top: 2rem;
 }

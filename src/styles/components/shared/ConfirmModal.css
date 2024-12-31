@@ -1,3 +1,7 @@
+.confirm-modal__wrapper {
+  display: grid;
+}
+
 .confirm-modal__wrapper__modal-wrapper {
   background-color: rgba(255, 255, 255, 0.397);
 
