@@ -128,8 +128,14 @@ Object.values(educationAttributes).forEach((element) => {
   element['data-editor'] = 'education';
 });
 
-Object.freeze(generalAttributes);
-Object.freeze(experienceAttributes);
-Object.freeze(educationAttributes);
+[generalAttributes, experienceAttributes, educationAttributes].forEach(
+  (element) => {
+    Object.values(element).forEach((value) => {
+      Object.freeze(value);
+    });
+
+    Object.freeze(element);
+  }
+);
 
 export { generalAttributes, experienceAttributes, educationAttributes };
