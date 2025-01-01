@@ -20,7 +20,7 @@ function EducationPreview({ schools }) {
 
   return (
     <div className="education-preview">
-      <div className="education-preview__header">Experience</div>
+      <div className="education-preview__header">Education</div>
       <hr className="education-preview__line" />
       <div className="education-preview__schools">{schoolSections}</div>
     </div>
