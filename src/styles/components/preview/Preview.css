@@ -2,13 +2,29 @@
   display: grid;
   justify-content: center;
   grid-template-columns: minmax(min-content, 800px);
+  gap: 1rem;
+  grid-auto-flow: column;
+
+  position: relative;
+  align-items: start;
 }
 
-.preview__wrapper {
+.preview__page {
   padding: var(--fs-4);
   background-color: #f0efeb;
   color: black;
 
   display: grid;
   gap: 1rem;
+}
+
+.preview__button-wrapper {
+  display: grid;
+  align-content: start;
+
+  grid-template-columns: 1fr;
+  gap: 1rem;
+
+  position: sticky;
+  top: 2rem;
 }

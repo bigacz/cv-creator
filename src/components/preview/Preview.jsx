@@ -11,10 +11,12 @@ function Preview({ cvData, handlePreviewClose }) {
 
   return (
     <div className="preview">
-      <div className="preview__wrapper">
+      <div className="preview__page">
         <GeneralPreview credentials={credentials} />
         <ExperiencePreview jobs={jobs} />
         <EducationPreview schools={schools} />
+      </div>
+      <div className="preview__button-wrapper">
         <Button handleClick={handlePreviewClose} text="Close" />
       </div>
     </div>
