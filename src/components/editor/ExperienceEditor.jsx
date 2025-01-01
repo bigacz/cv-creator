@@ -98,7 +98,7 @@ function ExperienceEditor({
       <div className={wrapperClasses}>
         {jobFieldsets}
         <div>
-          <Button handleClick={handleAdd} type="add" />
+          <Button handleClick={handleAdd} text="Add Job" type="add" />
         </div>
       </div>
     </fieldset>

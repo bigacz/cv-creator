@@ -74,7 +74,7 @@ function EducationEditor({
       <div className={wrapperClasses}>
         {schoolFieldsets}
         <div>
-          <Button handleClick={handleAdd} type="add" />
+          <Button handleClick={handleAdd} text="Add School" type="add" />
         </div>
       </div>
     </fieldset>
