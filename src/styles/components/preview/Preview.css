@@ -4,7 +4,6 @@
   grid-template-columns: minmax(min-content, 800px);
   gap: 1rem;
   grid-auto-flow: column;
-
   position: relative;
   align-items: start;
 }
@@ -15,7 +14,9 @@
   color: black;
 
   display: grid;
+  grid-auto-rows: max-content;
   gap: 1rem;
+  min-height: 900px;
 }
 
 .preview__button-wrapper {
