@@ -31,6 +31,8 @@ const generalAttributes = {
     labelTitle: 'Phone number',
     minLength: 2,
     maxLength: 18,
+    pattern: '^[\\d\\+][\\d\\s]+$',
+    title: 'Use two or more numbers only.',
   },
 };
 
