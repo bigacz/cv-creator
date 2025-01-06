@@ -12,12 +12,14 @@ const defaultTexts = {
 
 function Button({
   handleClick,
-  type = 'regular',
-  text = defaultTexts[type],
+  buttonType = 'regular',
+  text = defaultTexts[buttonType],
   className,
-  htmlAttributes,
+  ...htmlAttributes
 }) {
-  let buttonClasses = ['button', `button--${type}`];
+  console.log(htmlAttributes);
+
+  let buttonClasses = ['button', `button--${buttonType}`];
 
   if (className != null) {
     buttonClasses.push(className);
@@ -29,8 +31,8 @@ function Button({
     <button
       onClick={handleClick}
       className={buttonClasses}
-      {...htmlAttributes}
       type="button"
+      {...htmlAttributes}
     >
       {text}
     </button>

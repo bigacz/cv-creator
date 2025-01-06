@@ -49,7 +49,7 @@ function EducationEditor({
         <EditorSection inputsAttributes={inputsAttributes} />
         {isRemoveButtonAdded && (
           <div className="education-editor__wrapper__section__remove">
-            <Button handleClick={handleRemoveBinded} type="remove" />
+            <Button handleClick={handleRemoveBinded} buttonType="remove" />
           </div>
         )}
       </div>
@@ -74,7 +74,7 @@ function EducationEditor({
       <div className={wrapperClasses}>
         {schoolFieldsets}
         <div>
-          <Button handleClick={handleAdd} text="Add School" type="add" />
+          <Button handleClick={handleAdd} text="Add School" buttonType="add" />
         </div>
       </div>
     </fieldset>

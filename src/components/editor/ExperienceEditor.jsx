@@ -77,7 +77,7 @@ function ExperienceEditor({
         <EditorSection inputsAttributes={inputsAttributes} />
         {isRemoveButtonAdded && (
           <div className="experience-editor__wrapper__section__remove">
-            <Button handleClick={handleRemoveBinded} type="remove" />
+            <Button handleClick={handleRemoveBinded} buttonType="remove" />
           </div>
         )}
       </div>
@@ -98,7 +98,7 @@ function ExperienceEditor({
       <div className={wrapperClasses}>
         {jobFieldsets}
         <div>
-          <Button handleClick={handleAdd} text="Add Job" type="add" />
+          <Button handleClick={handleAdd} text="Add Job" buttonType="add" />
         </div>
       </div>
     </fieldset>
