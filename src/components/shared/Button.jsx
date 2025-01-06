@@ -17,8 +17,6 @@ function Button({
   className,
   ...htmlAttributes
 }) {
-  console.log(htmlAttributes);
-
   let buttonClasses = ['button', `button--${buttonType}`];
 
   if (className != null) {
