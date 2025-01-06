@@ -14,7 +14,7 @@
 }
 
 .flex-input-list__add {
-  justify-self: center;
+  justify-self: end;
 }
 
 .flex-input-list__list__item {

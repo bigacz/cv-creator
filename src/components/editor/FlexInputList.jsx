@@ -43,7 +43,11 @@ function FlexInputList({
   return (
     <div className="flex-input-list">
       <ul className="flex-input-list__list">{listItems}</ul>
-      <Button handleClick={handleAdd} buttonType="add" />
+      <Button
+        className="flex-input-list__add"
+        handleClick={handleAdd}
+        buttonType="add"
+      />
     </div>
   );
 }
