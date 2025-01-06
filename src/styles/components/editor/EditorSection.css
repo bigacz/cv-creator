@@ -44,6 +44,13 @@
   font-size: var(--fs-2);
 }
 
+.editor-section__label--regular input::placeholder {
+  opacity: 0;
+}
+
+.editor-section__label--regular input:disabled::placeholder {
+  opacity: 1;
+  font-style: italic;
 }
 
 .editor-section__label--checkbox {
