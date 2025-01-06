@@ -29,7 +29,7 @@ function EditorSection({ inputsAttributes }) {
 
       return (
         <label key={labelTitle} className={classes}>
-          <span>{labelTitle}:</span>
+          <span>{labelTitle}</span>
           {element}
         </label>
       );
