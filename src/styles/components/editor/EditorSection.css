@@ -3,6 +3,8 @@
   grid-template-columns: 1fr 1fr;
   column-gap: 1rem;
   row-gap: 0.5rem;
+
+  font-size: 1.15rem;
 }
 
 .editor-section__label--regular {
