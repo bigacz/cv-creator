@@ -15,9 +15,10 @@ function FlexInputList({
     const { id, value } = entry;
 
     return (
-      <li key={id}>
+      <li key={id} className="flex-input-list__list__item">
         <input
           {...attributes}
+          className="flex-input-list__list__item__input"
           type="text"
           value={value}
           onChange={(event) => {
