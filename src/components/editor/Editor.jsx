@@ -2,6 +2,8 @@ import 'styles/components/editor/Editor.css';
 
 import { useRef } from 'react';
 
+import Button from 'components/shared/Button';
+
 import GeneralEditor from 'components/editor/GeneralEditor.jsx';
 import ExperienceEditor from 'components/editor/ExperienceEditor.jsx';
 import EducationEditor from 'components/editor/EducationEditor.jsx';
@@ -112,9 +114,7 @@ function Editor({ cvData, handlers, areEditorsOpen }) {
           questionText="Fill the editor?"
           resultText="This will remove all your current input."
         />
-        <button className="button" type="submit" onClick={handleSubmitRequest}>
-          Generate
-        </button>
+        <Button onClick={handleSubmitRequest} text="Generate" type="submit" />
       </div>
     </form>
   );
