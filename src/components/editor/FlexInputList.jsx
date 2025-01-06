@@ -1,5 +1,7 @@
 import 'styles/components/editor/FlexInputList.css';
 
+import Button from 'components/shared/Button';
+
 function FlexInputList({
   entries,
   handleChange,
@@ -40,13 +42,7 @@ function FlexInputList({
   return (
     <div className="flex-input-list">
       <ul className="flex-input-list__list">{listItems}</ul>
-      <button
-        className="flex-input-list__add button"
-        type="button"
-        onClick={handleAdd}
-      >
-        Add
-      </button>
+      <Button handleClick={handleAdd} type="add" />
     </div>
   );
 }
