@@ -31,6 +31,7 @@
 
 .editor-toggler__arrow {
   transition: transform 0.2s;
+  user-select: none;
 }
 
 .editor-toggler--open .editor-toggler__arrow {
