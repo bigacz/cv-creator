@@ -25,7 +25,7 @@ function Preview({ cvData, handlePreviewClose }) {
         <ExperiencePreview jobs={jobs} />
         <EducationPreview schools={schools} />
       </div>
-      <div className="preview__button-wrapper">
+      <div className="preview__buttons-wrapper">
         <Button handleClick={handlePreviewClose} text="Close" />
         <Button handleClick={handlePrint} text="Print" />
       </div>
