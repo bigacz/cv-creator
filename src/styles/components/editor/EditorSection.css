@@ -79,7 +79,8 @@
   display: grid;
   place-content: center;
 
-  background-color: rgb(197, 197, 197);
+  background-color: var(--color-2);
+  background-color: var(--color-3); /* color 3*/
   border-radius: 3px;
 }
 
