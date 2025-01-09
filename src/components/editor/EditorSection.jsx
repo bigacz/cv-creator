@@ -25,6 +25,7 @@ function EditorSection({ inputsAttributes }) {
     ];
 
     if (isValidElement(element)) {
+      labelClasses.push('editor-section__label--element');
       const classes = labelClasses.join(' ');
 
       return (
