@@ -11,6 +11,10 @@
   position: relative;
 }
 
+.editor-section__label span {
+  font-weight: bold;
+}
+
 .editor-section::after {
   position: absolute;
   left: 0;
@@ -34,10 +38,6 @@
   grid-template-rows: max-content 1.9rem;
 
   position: relative;
-}
-
-.editor-section__label span {
-  font-weight: bold;
 }
 
 .editor-section__label--regular input {
@@ -68,6 +68,34 @@
 
 .editor-section__label--checkbox span {
   align-self: center;
+}
+
+.editor-section__label--checkbox input {
+  border: none;
+  appearance: none;
+  font: inherit;
+  margin: 0;
+
+  display: grid;
+  place-content: center;
+
+  background-color: rgb(197, 197, 197);
+  border-radius: 3px;
+}
+
+.editor-section__label--checkbox input::after {
+  content: '';
+  height: 1em;
+  width: 1em;
+  border-radius: 3px;
+  transform: scale(0);
+
+  box-shadow: inset 1em 1em var(--color-6);
+  clip-path: polygon(8% 50%, 0 65%, 50% 100%, 100% 10%, 85% 0%, 44% 75%);
+}
+
+.editor-section__label--checkbox input:checked::after {
+  transform: scale(1);
 }
 
 .editor-section__label--width-2 {
