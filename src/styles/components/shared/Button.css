@@ -9,7 +9,7 @@
   position: relative;
 
   font-size: var(--fs-2);
-  color: var(--color-1);
+  color: var(--color-gray-1);
   background-color: var(--background-color);
 }
 
@@ -22,8 +22,8 @@
 }
 
 .button--regular {
-  --background-color: var(--color-4);
-  --background-color--hover: var(--color-5);
+  --background-color: var(--color-gray-5);
+  --background-color--hover: var(--color-gray-6);
 }
 
 .button--add {

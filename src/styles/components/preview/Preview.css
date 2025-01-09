@@ -10,8 +10,8 @@
 
 .preview__page {
   padding: var(--fs-4);
-  background-color: var(--color-2);
-  color: var(--color-6);
+  background-color: var(--color-gray-2);
+  color: var(--color-gray-7);
   border-radius: 2px;
 
   display: grid;

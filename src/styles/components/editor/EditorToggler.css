@@ -16,7 +16,7 @@
 
 .editor-toggler--closed {
   position: relative;
-  background-color: var(--color-2);
+  background-color: var(--color-gray-3);
   border-radius: 4px;
 }
 

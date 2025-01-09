@@ -6,12 +6,13 @@
   --fs-5: 1.5rem;
   --fs-6: 1.75rem;
 
-  --color-1: #f7f7f7;
-  --color-2: #e9e9e9;
-  --color-3: #c5c5c5;
-  --color-4: #646464;
-  --color-5: #39393a;
-  --color-6: #272727;
+  --color-gray-1: #f7f7f7;
+  --color-gray-2: #eeeeee;
+  --color-gray-3: #e9e9e9;
+  --color-gray-4: #c5c5c5;
+  --color-gray-5: #646464;
+  --color-gray-6: #39393a;
+  --color-gray-7: #272727;
 
   --color-red-1: #ff7272;
   --color-red-2: #c53f3f;
@@ -35,8 +36,8 @@ fieldset {
 }
 
 body {
-  background-color: var(--color-1);
-  color: var(--color-6);
+  background-color: var(--color-gray-1);
+  color: var(--color-gray-7);
   font-family: 'Inter', sans-serif;
 }
 
