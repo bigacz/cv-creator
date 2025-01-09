@@ -31,7 +31,7 @@ function ConfirmModal({
   );
 
   const modal = (
-    <div className="confirm-modal__wrapper__modal-wrapper">
+    <div className="confirm-modal__wrapper__modal-wrapper no-scroll">
       <div className={modalPrefix}>
         <div className={`${modalPrefix}__header`}>{questionText}</div>
         {resultNode}
