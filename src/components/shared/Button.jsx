@@ -1,7 +1,7 @@
 import 'styles/components/shared/Button.css';
 
 /**
- * @param {'regular'|'add'|'remove'} type
+ * @param {'regular'|'add'|'remove'} buttonType
  */
 
 const defaultTexts = {
