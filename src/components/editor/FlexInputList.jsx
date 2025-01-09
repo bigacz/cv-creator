@@ -28,12 +28,13 @@ function FlexInputList({
         />
         {isRemoveButtonAdded && (
           <button
+            className="flex-input-list__list__item__remove"
             type="button"
             onClick={() => {
               handleRemove(id);
             }}
           >
-            x
+            -
           </button>
         )}
       </li>

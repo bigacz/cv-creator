@@ -34,3 +34,25 @@
   border: none;
   border-radius: 3px;
 }
+
+.flex-input-list__list__item__remove {
+  border-radius: 3px;
+  border: none;
+  font-weight: 600;
+  transition:
+    transform 0.03s,
+    background-color 0.1s;
+
+  font-size: var(--fs-2);
+
+  color: var(--color-1);
+  background-color: var(--color-red-1);
+}
+
+.flex-input-list__list__item__remove:active {
+  transform: scale(1.03);
+}
+
+.flex-input-list__list__item__remove:hover {
+  background-color: var(--color-red-2);
+}
