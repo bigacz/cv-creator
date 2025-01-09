@@ -42,6 +42,7 @@
   grid-area: position;
 
   font-style: italic;
+  padding-bottom: 2px;
 }
 
 .experience-preview__jobs__section__duties {
@@ -49,7 +50,7 @@
   margin: 0;
   grid-area: duties;
   display: grid;
-  gap: 1px;
+  gap: 4px;
 }
 
 .experience-preview__jobs__section__date {

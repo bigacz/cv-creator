@@ -20,7 +20,7 @@
 .education-preview__schools {
   padding: 0 1rem;
   display: grid;
-  gap: 5px;
+  gap: 6px;
 }
 
 .education-preview__schools__section {

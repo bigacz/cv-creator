@@ -10,13 +10,16 @@
 
 .preview__page {
   padding: var(--fs-4);
-  background-color: #f0efeb;
-  color: black;
+  background-color: var(--color-2);
+  color: var(--color-6);
+  border-radius: 2px;
 
   display: grid;
   grid-auto-rows: max-content;
   gap: 1rem;
   min-height: 900px;
+
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 .preview__buttons-wrapper {
