@@ -3,7 +3,7 @@
 }
 
 .confirm-modal__wrapper__modal-wrapper {
-  background-color: rgba(255, 255, 255, 0.397);
+  background-color: rgba(184, 184, 184, 0.45);
 
   position: fixed;
   top: 0;
@@ -13,13 +13,13 @@
 
   display: grid;
   place-items: center;
+  z-index: 2;
 }
 
 .confirm-modal__wrapper__modal-wrapper__modal {
   margin: 0;
   border: 0;
   padding: 1rem;
-  background-color: orange;
   transform: translateY(-75%);
 
   display: grid;
@@ -29,6 +29,10 @@
     'cancel accept';
   gap: 1.5rem;
   grid-template-columns: 1fr 1fr;
+
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  background-color: var(--color-2);
+  border-radius: 5px;
 }
 
 .confirm-modal__wrapper__modal-wrapper__modal__header {
