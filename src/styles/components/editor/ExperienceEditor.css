@@ -23,6 +23,7 @@
 @media screen and (max-width: 800px) {
   .experience-editor__wrapper__button-wrapper {
     display: grid;
+    padding-top: 5px;
     justify-content: center;
   }
 }
