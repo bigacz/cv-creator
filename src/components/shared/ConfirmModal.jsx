@@ -42,6 +42,7 @@ function ConfirmModal({
         />
         <Button
           text={buttonText}
+          buttonType="remove"
           handleClick={handleConfirmClick}
           className={`${modalPrefix}__accept`}
         />
