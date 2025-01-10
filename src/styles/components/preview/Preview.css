@@ -41,11 +41,9 @@
   .preview__buttons-wrapper {
     position: static;
 
-    grid-template-columns: none;
-    align-content: normal;
-
-    grid-auto-flow: column;
-    grid-auto-columns: max-content;
+    display: grid;
+    justify-self: center;
+    grid-template-columns: 1fr 1fr;
     justify-content: center;
   }
 }
