@@ -2,6 +2,11 @@
   display: grid;
 }
 
+.experience-editor__wrapper {
+  display: grid;
+  gap: 5px;
+}
+
 .experience-editor__wrapper--hidden {
   display: none;
 }
