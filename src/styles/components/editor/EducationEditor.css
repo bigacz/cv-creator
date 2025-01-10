@@ -19,3 +19,10 @@
 .education-editor__wrapper__section__remove {
   justify-self: center;
 }
+
+@media screen and (max-width: 800px) {
+  .education-editor__wrapper__button-wrapper {
+    display: grid;
+    justify-content: center;
+  }
+}

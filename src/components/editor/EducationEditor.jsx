@@ -73,7 +73,7 @@ function EducationEditor({
 
       <div className={wrapperClasses}>
         {schoolFieldsets}
-        <div>
+        <div className="education-editor__wrapper__button-wrapper">
           <Button handleClick={handleAdd} text="Add School" buttonType="add" />
         </div>
       </div>
