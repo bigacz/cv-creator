@@ -20,6 +20,7 @@ function FlexInputList({
           {...attributes}
           className="flex-input-list__list__item__input"
           type="text"
+          name={id}
           value={value}
           onChange={(event) => {
             handleChange(id, event.target.value);

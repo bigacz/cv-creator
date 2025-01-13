@@ -24,6 +24,7 @@ const generalAttributes = {
     labelTitle: 'E-mail',
     minLength: 3,
     maxLength: 40,
+    autoComplete: 'on',
   },
   phone: {
     name: 'phone',
@@ -33,6 +34,7 @@ const generalAttributes = {
     maxLength: 18,
     pattern: '^[\\d\\+][\\d\\s]+$',
     title: 'Use two or more numbers only.',
+    autoComplete: 'on',
   },
 };
 
