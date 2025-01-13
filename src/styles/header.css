@@ -5,4 +5,16 @@
 
 .header_text {
   padding: 1rem;
+  font-weight: 800;
+  font-size: var(--fs-7);
+  --color: var(--color-gray-3);
+  text-shadow:
+    -2px 2px 0px var(--color),
+    -1.75px 1.75px 0px var(--color),
+    -1.5px 1.5px 0px var(--color),
+    -1.25px 1.25px 0px var(--color),
+    -1px 1px 0px var(--color),
+    -0.75px 0.75px 0px var(--color),
+    -0.5px 0.5px 0px var(--color),
+    -0.25px 0.25px 0px var(--color);
 }
