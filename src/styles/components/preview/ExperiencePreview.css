@@ -50,7 +50,8 @@
   margin: 0;
   grid-area: duties;
   display: grid;
-  gap: 4px;
+  gap: 5px;
+  line-height: 1.15em;
 }
 
 .experience-preview__jobs__section__date {
