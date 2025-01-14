@@ -8,14 +8,14 @@ import {
   defaultJob,
   defaultDuty,
 } from 'src/data/defaultCvValues';
-
-import Editor from 'components/editor/Editor';
-import Preview from 'components/preview/Preview';
 import {
   placeholderCredentials,
   placeholderSchools,
   placeholderJobs,
 } from 'src/data/placeholderCvValues';
+
+import Editor from 'components/editor/Editor';
+import Preview from 'components/preview/Preview';
 
 function CvCreator() {
   const [credentials, setCredentials] = useState({ ...defaultCredentials });

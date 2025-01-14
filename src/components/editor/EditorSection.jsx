@@ -1,5 +1,6 @@
-import { isValidElement } from 'react';
 import 'styles/components/editor/EditorSection.css';
+
+import { isValidElement } from 'react';
 
 function EditorSection({ inputsAttributes }) {
   const attributesArray = Object.values(inputsAttributes);

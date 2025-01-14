@@ -3,12 +3,11 @@ import 'styles/components/editor/Editor.css';
 import { useRef } from 'react';
 
 import Button from 'components/shared/Button';
+import ConfirmModal from 'components/shared/ConfirmModal';
 
 import GeneralEditor from 'components/editor/GeneralEditor.jsx';
 import ExperienceEditor from 'components/editor/ExperienceEditor.jsx';
 import EducationEditor from 'components/editor/EducationEditor.jsx';
-
-import ConfirmModal from 'components/shared/ConfirmModal';
 
 function Editor({ cvData, handlers, areEditorsOpen }) {
   const { isGeneralOpen, isExperienceOpen, isEducationOpen } = areEditorsOpen;

@@ -1,4 +1,5 @@
 import 'styles/components/App.css';
+
 import CvCreator from 'components/CvCreator';
 
 function App() {

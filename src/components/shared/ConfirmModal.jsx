@@ -1,7 +1,8 @@
 import 'styles/components/shared/ConfirmModal.css';
 
-import Button from 'components/shared/Button';
 import { useState } from 'react';
+
+import Button from 'components/shared/Button';
 
 function ConfirmModal({
   handleConfirm,

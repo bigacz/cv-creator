@@ -1,4 +1,5 @@
 import arrowDown from 'assets/arrow-down.svg';
+
 import 'styles/components/editor/EditorToggler.css';
 
 // Toggle

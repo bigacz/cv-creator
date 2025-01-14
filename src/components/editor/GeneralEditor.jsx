@@ -1,10 +1,10 @@
+import 'styles/components/editor/GeneralEditor.css';
+
 import { generalAttributes } from 'src/data/inputsAttributes';
 import { mergeInputsAttributes } from 'src/utilities';
 
 import EditorToggler from 'components/editor/EditorToggler';
 import EditorSection from 'components/editor/EditorSection';
-
-import 'styles/components/editor/GeneralEditor.css';
 
 function GeneralEditor({ credentials, handleChange, handleToggle, isOpen }) {
   const inputsAttributes = mergeInputsAttributes(
