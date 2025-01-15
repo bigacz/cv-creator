@@ -1,3 +1,5 @@
+import githubIcon from 'assets/github.svg';
+
 import 'styles/components/App.css';
 
 import CvCreator from 'components/CvCreator';
@@ -14,10 +16,7 @@ function App() {
           className="footer__link-github"
           href="https://github.com/bigacz/cv-creator"
         >
-          <img
-            src="src/assets/github.svg"
-            alt="View the source code on github"
-          />
+          <img src={githubIcon} alt="View the source code on github" />
         </a>
       </footer>
     </div>
