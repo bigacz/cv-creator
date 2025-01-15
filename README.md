@@ -1,6 +1,7 @@
 # CV Creator
 
-Application that gathers general information about you and generates corresponding resume.
+Application that gathers general information about you and generates corresponding resume.\
+**[Live preview](https://cv-creator-c7e.pages.dev/)**
 
 ## Features
 
